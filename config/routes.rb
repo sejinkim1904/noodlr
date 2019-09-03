@@ -12,5 +12,5 @@ Rails.application.routes.draw do
 
   resources :users, only: [:create]
 
-  match '*path', to: 'welcome#error404', via: :all
+  match '*path', to: 'welcome#index', via: :all
 end
