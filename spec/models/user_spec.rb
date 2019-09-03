@@ -36,6 +36,6 @@ RSpec.describe User, type: :model do
   end
 
   describe 'methods' do
-    
+
   end
 end
