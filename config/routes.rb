@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get '/signup', to: 'users#new', as: :signup
   get '/login', to: 'sessions#new', as: :login
-  
+  get '/facebook/login', to: 'facebook/sessions#new', as: :facebook_login
+  get '/gmail/login', to: 'gmail/sessions#new', as: :gmail_login
+
   resources :users, only: [:create]
 end
