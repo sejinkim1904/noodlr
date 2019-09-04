@@ -1,0 +1,26 @@
+<h1>Login</h1>
+
+<section class="user-login">
+  <%= form_for :session, url: login_path do |f| %>
+    <div>
+      <%= f.label :email %>
+      <%= f.email_field :email, class: "block col-12 field" %>
+    </div>
+    <div>
+      <%= f.label :password %>
+      <%= f.password_field :password, class: "block col-12 field" %>
+    </div>
+    <%= f.submit 'Log In', class: "mt2 btn btn-primary mb1 bg-teal" %>
+  <% end %>
+</section>
+
+<h2>Need an account?</h2>
+
+<%= button_to 'Sign Up', signup_path, method: :get %>
+
+<h2>- OR -</h2>
+
+<p>Sign in with:</p>
+
+<%= button_to 'Facebook', facebook_login_path, method: :get %>
+<%= button_to 'Gmail', gmail_login_path, method: :get %>

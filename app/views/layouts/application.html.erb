@@ -11,6 +11,7 @@
   </head>
 
   <body>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">noodz</a>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -28,6 +29,11 @@
       </form>
       </div>
     </nav>
+    
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: name %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
