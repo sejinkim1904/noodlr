@@ -1,7 +1,7 @@
 <h1>Login</h1>
 
 <section class="user-login">
-  <%= form_for :session, url: login_path do |f| %>
+  <%= form_for :session, url: logged_in_path do |f| %>
     <div>
       <%= f.label :email %>
       <%= f.email_field :email, class: "block col-12 field" %>
