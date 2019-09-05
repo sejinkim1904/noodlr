@@ -41,7 +41,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'launchy'
   gem 'factory_bot_rails'
-  gem 'faker'
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
   gem 'pry'
   gem 'capybara'
   gem 'shoulda-matchers'
