@@ -1,1 +1,1 @@
-<h3>Visit <%= link_to "here", ENV["LOCAL_URL"] + "/register/#{@user.registered}", method: :get %> to activate your account</h3>
+<h3>Visit <%= link_to "here", activation_url("#{@user.id}-#{@user.registered}", host: ENV["LOCAL_URL"]) %> to activate your account</h3>

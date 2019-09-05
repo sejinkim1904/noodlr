@@ -14,15 +14,26 @@ describe 'user can register an account' do
 
     expect(current_path).to eq(dashboard_path)
 
-		page.driver.submit :get, activation_path(User.last.registered), {}
+		page.driver.submit :get, activation_path("#{User.last.id}-5"), {}
 
-		expect(page).to have_content("Thank you! Your account is now activated.")
+		expect(page).to have_content("Invalid activation code!")
+
+		page.driver.submit :get, activation_path("#{User.last.id}-#{User.last.registered}"), {}
+
+		expect(page).to have_content("Thank you! Your account is now active.")
 
 		expect(current_path).to eq(dashboard_path)
 		expect(page).to have_content("Status: Active")
 
-		page.driver.submit :get, activation_path("5"), {}
+		page.driver.submit :get, activation_path("#{User.last.id}-#{User.last.registered}"), {}
 
-		expect(page).to have_content("User not found!")
+		expect(page).to have_content("Your account is already active.")
+
+		expect(current_path).to eq(dashboard_path)
+		expect(page).to have_content("Status: Active")
+
+		page.driver.submit :get, activation_path("5000"), {}
+
+		expect(page).to have_content("User not found!")		
 	end
 end
