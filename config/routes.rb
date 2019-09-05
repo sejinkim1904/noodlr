@@ -10,8 +10,10 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create', as: :logged_in
   get '/logout', to: 'sessions#destroy', as: :logout
   get '/activation/:code', to: 'activation#create', as: :activation
+
   get '/facebook/login', to: 'facebook/sessions#new', as: :facebook_login
   get '/gmail/login', to: 'gmail/sessions#new', as: :gmail_login
+  get '/instagram/login', to: 'instagram/sessions#new', as: :instagram_login
 
   resources :users, only: [:create]
 
