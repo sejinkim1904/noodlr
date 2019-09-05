@@ -4,11 +4,7 @@ class DashboardFacade
 		@current_user = current_user
 	end
 
-  def active_message
-    if @current_user.registered == "true" ? "active" : "inactive"
-
-    else
-      
-    end
+  def active?
+    @current_user.registered == "true" ? "active" : "inactive"
   end
 end
