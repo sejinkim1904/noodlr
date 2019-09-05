@@ -21,7 +21,7 @@ describe 'user can register an account' do
 		expect(current_path).to eq(dashboard_path)
 		expect(page).to have_content("Status: Active")
 
-		page.driver.submit :get, activate_user_path("5"), {}
+		page.driver.submit :get, activation_path("5"), {}
 
 		expect(page).to have_content("User not found!")
 	end
