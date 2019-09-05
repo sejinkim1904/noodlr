@@ -1,7 +1,7 @@
 class ActivationController < ApplicationController
   def create
     user_data = params[:code].split('-')
-    user = User.find(user_data[0])
+    user = User.find_by(id: user_data[0])
     if user.nil?
     	flash[:error] = "User not found!"
     	redirect_to root_path
