@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include ActionView::Helpers::NumberHelper
   helper_method :current_user
 
   def current_user
