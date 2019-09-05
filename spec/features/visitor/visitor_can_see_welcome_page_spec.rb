@@ -6,8 +6,7 @@ describe 'Welcome Page' do
       visit root_path
 
       expect(page).to have_content('Most Popular')
-
-      expect(page).to have_button('Login')
+      expect(page).to have_link('Sign In')
       expect(page).to have_button('Search')
       expect(page).to have_button('Browse More')
     end

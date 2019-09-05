@@ -10,8 +10,13 @@ class SessionsController < ApplicationController
 			flash[:notice] = "Logged in as #{user.first_name} #{user.last_name}"
       redirect_to dashboard_path
     else
-      flash[:error] = "Looks like your email or password is invalid"
+      flash[:error] = "Your email or password is invalid"
       render :new
     end
+  end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to root_path
   end
 end
