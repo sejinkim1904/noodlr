@@ -41,6 +41,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'launchy'
   gem 'factory_bot_rails'
+  gem 'faker'
   gem 'pry'
   gem 'capybara'
   gem 'shoulda-matchers'

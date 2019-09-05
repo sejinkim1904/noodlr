@@ -41,6 +41,6 @@ describe 'vister can create an account' do
 
     click_on 'Create Account'
 
-    expect(page).to have_content('Username already exists')
+    expect(page).to have_content('That email has already been taken.')
   end
 end
