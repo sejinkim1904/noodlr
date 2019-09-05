@@ -5,10 +5,10 @@ class DashboardFacade
 	end
 
   def active_message
-    if @current_user.registered == "true"
-      "Status: Active"
+    if @current_user.registered == "true" ? "active" : "inactive"
+
     else
-      "This account has not yet been activated. Please check your email."
+      
     end
   end
 end
