@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.new(email: 'default@user.com', first_name: 'default', last_name: 'user', password: 'default', role: 0, registered: 'default')
+User.new(email: 'admin@user.com', first_name: 'admin', last_name: 'user', password: 'admin', role: 0, registered: 'admin')
+User.new(email: 'restaurant@user.com', first_name: 'restaurant', last_name: 'user', password: 'restaurant', role: 0, registered: 'restaurant')
+
 tokio = Restaurant.new(name: 'Tokio')
 tokio.items.new(name: "Tonkotsu", price: 1400, category: "ramen", image: "https://s3-media2.fl.yelpcdn.com/bphoto/eMmvwCMQtOUs7GxccJu4zA/o.jpg")
 tokio.items.new(name: 'Shoyu', price: 1300, category: 'ramen', image: 'https://s3-media3.fl.yelpcdn.com/bphoto/mrqOZ_4ev2UhJWlcUEzVHg/o.jpg')
