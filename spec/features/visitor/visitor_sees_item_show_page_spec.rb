@@ -14,7 +14,7 @@ describe 'As a visitor' do
     -restaurant, which is a link to the restaurant's show page" do
 
       visit item_path(@item)
-      save_and_open_page
+      
       expect(page).to have_content(@item.name)
       expect(page).to have_content("Price: #{number_to_currency(@item.price)}")
       expect(page).to have_content("Category: #{@item.category}")

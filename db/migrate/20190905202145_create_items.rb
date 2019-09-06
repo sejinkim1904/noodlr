@@ -5,7 +5,9 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer :price
       t.string :category
       t.string :image
-      t.string :restaurant
+      t.string :restaurant_id
+
+      t.timestamps
     end
   end
 end
