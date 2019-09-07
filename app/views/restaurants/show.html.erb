@@ -1,1 +1,12 @@
 <h1><%= @restaurant.name %></h1>
+
+<section class='items'>
+  <h2>Dishes</h2>
+
+  <% @restaurant.items.each do |item| %>
+    <section class='item' id='item.name'>
+      <p><%= item.name %></p>
+      <p><%= item.average_rating %></p>
+    </section>
+  <% end %>
+</section>
