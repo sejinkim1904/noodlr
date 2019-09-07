@@ -5,9 +5,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer :price
       t.string :category
       t.string :image
-      t.string :restaurant_id
-
-      t.timestamps
+      t.references :restaurant, foreign_key: true
     end
   end
 end
