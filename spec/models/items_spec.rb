@@ -6,6 +6,5 @@ describe Item do
     it { should validate_presence_of :price }
     it { should validate_presence_of :category }
     it { should validate_presence_of :image }
-    it { should validate_presence_of :restaurant }
   end
 end
