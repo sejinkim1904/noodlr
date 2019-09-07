@@ -6,7 +6,7 @@
   <% @restaurant.items.each do |item| %>
     <section class='item' id='item.name'>
       <p><%= item.name %></p>
-      <p><%= item.average_rating %></p>
+      <p>Average Rating: <%= item.average_rating.round(1) %></p>
     </section>
   <% end %>
 </section>
