@@ -5,4 +5,8 @@ class Item < ApplicationRecord
                         :category,
                         :price,
                         :image
+
+  def average_rating
+    reviews.average(:rating)
+  end
 end
