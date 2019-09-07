@@ -22,6 +22,10 @@ describe 'As a visitor' do
       expect(page).to have_content("Available at: #{@item.restaurant.name}")
       expect(page).to have_link("#{@item.restaurant.name}")
       expect(page).to have_css("img[src*='https://cdn.imgbin.com/6/25/4/imgbin-ramen-chinese-cuisine-instant-noodle-cafe-ramen-ZNpT2ydDk6mZj0KrMKmjreJka.jpg']")
+
+      click_on "#{@item.restaurant.name}"
+
+      expect(current_path).to eq(restaurant_path(@item.restaurant))
     end
   end
 end
