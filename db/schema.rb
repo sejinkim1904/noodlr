@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_06_191620) do
+ActiveRecord::Schema.define(version: 2019_09_05_202145) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,9 +20,10 @@ ActiveRecord::Schema.define(version: 2019_09_06_191620) do
     t.integer "price"
     t.string "category"
     t.string "image"
-    t.string "restaurant_id"
+    t.bigint "restaurant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["restaurant_id"], name: "index_items_on_restaurant_id"
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -47,4 +48,5 @@ ActiveRecord::Schema.define(version: 2019_09_06_191620) do
     t.index ["email"], name: "index_users_on_email"
   end
 
+  add_foreign_key "items", "restaurants"
 end

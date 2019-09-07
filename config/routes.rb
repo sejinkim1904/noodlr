@@ -21,5 +21,7 @@ Rails.application.routes.draw do
 
   resources :restaurants, only: [:show]
 
+  get 'results', to: 'search#index', as: 'results'
+
   match '*path', to: 'welcome#index', via: :all
 end
