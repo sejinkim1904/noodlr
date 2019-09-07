@@ -12,6 +12,7 @@ User.create!(email: 'restaurant@user.com', first_name: 'restaurant', last_name: 
 
 tokio = Restaurant.create!(name: 'Tokio')
 tokio.items.create!(name: "Tonkotsu", price: 1400, category: "ramen", image: "https://s3-media2.fl.yelpcdn.com/bphoto/eMmvwCMQtOUs7GxccJu4zA/o.jpg")
+Item.last.reviews.create!(title: 'So tasteful!', body: 'This is the tastiest Tonkotsu in town', rating: 5)
 tokio.items.create!(name: 'Shoyu', price: 1300, category: 'ramen', image: 'https://s3-media3.fl.yelpcdn.com/bphoto/mrqOZ_4ev2UhJWlcUEzVHg/o.jpg')
 tokio.items.create!(name: 'Miso', price: 1100, category: 'ramen', image: 'https://s3-media4.fl.yelpcdn.com/bphoto/NzCFOr94zjfiR59mpeWDHA/o.jpg')
 

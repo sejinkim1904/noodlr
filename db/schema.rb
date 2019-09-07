@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 2019_09_07_225259) do
     t.string "category"
     t.string "image"
     t.bigint "restaurant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["restaurant_id"], name: "index_items_on_restaurant_id"
   end
 
@@ -39,6 +41,8 @@ ActiveRecord::Schema.define(version: 2019_09_07_225259) do
     t.string "body"
     t.integer "rating"
     t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_reviews_on_item_id"
   end
 

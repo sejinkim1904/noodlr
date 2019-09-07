@@ -7,4 +7,9 @@ describe Item do
     it { should validate_presence_of :category }
     it { should validate_presence_of :image }
   end
+
+  describe 'relationships' do
+		it {should have_many :reviews}
+		it {should belong_to :restaurant}
+	end
 end
