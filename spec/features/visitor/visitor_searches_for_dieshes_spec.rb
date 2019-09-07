@@ -30,6 +30,7 @@ describe "As a visitor" do
           expect(page).to have_content("Price: #{@dish_1.price}")
           expect(page).to have_content("Available at: #{@rest_1.name}")
           expect(page).to have_link(@rest_1.name)
+          expect(page).to have_css("img[src*='#{@dish_1.image}']")
         end
 
         within "#item-#{@dish_4.id}" do
@@ -37,6 +38,7 @@ describe "As a visitor" do
           expect(page).to have_content("Price: #{@dish_4.price}")
           expect(page).to have_content("Available at: #{@rest_2.name}")
           expect(page).to have_link(@rest_2.name)
+          expect(page).to have_css("img[src*='#{@dish_1.image}']")
         end
       end
     end

@@ -1,0 +1,10 @@
+<h3><%= facade.result_count %></h3>
+
+<%= facade.results.each do |result| %>
+  <section id="<%= result.id %>">
+    <%= result.image %>
+    <%= result.name %>
+    <p>Price: <%= number_to_currency(result.price) %></p>
+    <p>Available at: <%= link_to result.restaurant_name, restaurant_path(result.restaurant) %></p>
+  </section>
+<% end %>
