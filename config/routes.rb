@@ -22,7 +22,4 @@ Rails.application.routes.draw do
   resources :restaurants, only: [:show]
 
   match '*path', to: 'welcome#index', via: :all
-
-  #placeholder routes
-  get '/restaurant', to: 'items#show', as: 'restaurant_path'
 end
