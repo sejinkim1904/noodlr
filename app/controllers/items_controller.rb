@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
   def show
-    @item = Item.find(params[:id])
+    @item = Item.includes(:restaurant).find(params[:id])
   end
 end

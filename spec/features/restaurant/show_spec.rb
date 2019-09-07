@@ -7,19 +7,37 @@ describe 'Restaurant show page' do
       @ramen = @restaurant.items.create!(name: "Tonkotsu", price: 1400, category: "ramen", image: "https://s3-media2.fl.yelpcdn.com/bphoto/eMmvwCMQtOUs7GxccJu4zA/o.jpg")
       @ramen.reviews.create!(title: 'So tasteful!', body: 'This is the tastiest Tonkotsu in town', rating: 5)
       @ramen.reviews.create!(title: 'So tasteful!', body: 'This is the tastiest Tonkotsu in town', rating: 3)
+
+      visit restaurant_path(@restaurant)
     end
 
     it "As a visitor" do
-      visit restaurant_path(@restaurant)
-
       expect(page).to have_content(@restaurant.name)
       expect(page).to have_content("Dishes")
 
       expect(page).to have_css('.items')
       expect(page).to have_css('.item', count: 1)
 
-      expect(page).to have_content("Tonkotsu")
-      expect(page).to have_content("Average Rating: 4.0")
+      within ('#Tonkotsu') do
+        expect(page).to have_content("Tonkotsu")
+        expect(page).to have_content("Average Rating: 4.0")
+      end
+
+      expect(page).to_not have_content("Write a Review")
+    end
+
+    it "As a user" do
+      expect(page).to have_content(@restaurant.name)
+      expect(page).to have_content("Dishes")
+
+      expect(page).to have_css('.items')
+      expect(page).to have_css('.item', count: 1)
+
+      within ('#Tonkotsu') do
+        expect(page).to have_content("Tonkotsu")
+        expect(page).to have_content("Average Rating: 4.0")
+        expect(page).to have_link("Write a Review")
+      end
     end
   end
 end

@@ -7,6 +7,7 @@ class Item < ApplicationRecord
                         :image
 
   def average_rating
-    reviews.average(:rating)
+    rating = reviews.average(:rating)
+    rating.nil? ? 0 : rating
   end
 end
