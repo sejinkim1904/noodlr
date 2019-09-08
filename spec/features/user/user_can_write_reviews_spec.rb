@@ -33,6 +33,7 @@ describe 'Restaurant show page' do
       click_on "Submit"
 
       expect(page).to have_content("Review created.")
+      expect(current_path).to eq(item_path(@ramen))
 
       visit restaurant_path(@restaurant)
 

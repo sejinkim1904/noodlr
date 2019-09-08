@@ -8,10 +8,10 @@ class Default::ReviewsController < ApplicationController
     if review.save
       session[:item_id] = review.id
 			flash[:notice] = 'Review created.'
-			redirect_to send_registration_path
+			redirect_to item_path(params[:item_id])
     else
       flash[:error] = 'Review could not be saved.'
-      redirect_to new_default_item_review_path
+      redirect_to new_default_item_review_path(params[:item_id])
     end
   end
 
