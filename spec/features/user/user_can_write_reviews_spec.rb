@@ -23,8 +23,18 @@ describe 'Restaurant show page' do
         expect(page).to have_content("Average Rating: 0.0")
         click_on "Write a Review"
       end
-      
-      # @ramen.reviews.create!(title: 'So tasteful!', body: 'This is the tastiest Tonkotsu in town', rating: 5)
+
+      fill_in 'review[title]', with: 'So tasteful!'
+      fill_in 'review[body]', with: 'This is the tastiest Tonkotsu in town'
+      fill_in 'review[rating]', with: 5
+
+      click_on "Submit"
+
+      within ('#Tonkotsu') do
+        expect(page).to have_content("Tonkotsu")
+        expect(page).to have_content("Average Rating: 5.0")
+        expect(page).to_not have_content("Write a Review")
+      end
     end
   end
 end

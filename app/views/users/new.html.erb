@@ -2,28 +2,28 @@
   <main>
 <h1>Register</h1>
   <section>
-    <%= form_for @user do |form| %>
+    <%= form_for @user do |f| %>
       <div >
-        <%= form.label :email %>
-        <%= form.email_field :email, class: "block col-12 field" %>
+        <%= f.label :email %>
+        <%= f.email_field :email, class: "block col-12 field" %>
       </div>
       <div >
-        <%= form.label :first_name %>
-        <%= form.text_field :first_name, class: "block col-12 field" %>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, class: "block col-12 field" %>
       </div>
       <div>
-        <%= form.label :last_name %>
-        <%= form.text_field :last_name, class: "block col-12 field" %>
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, class: "block col-12 field" %>
       </div>
       <div>
-        <%= form.label :password %>
-        <%= form.password_field :password, class: "block col-12 field" %>
+        <%= f.label :password %>
+        <%= f.password_field :password, class: "block col-12 field" %>
       </div>
       <div>
-        <%= form.label :password_confirmation %>
-        <%= form.password_field :password_confirmation, class: "block col-12 field" %>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, class: "block col-12 field" %>
       </div>
-      <%= form.submit 'Create Account', class: "mt2 btn btn-primary mb1 bg-teal" %>
+      <%= f.submit 'Create Account', class: "mt2 btn btn-primary mb1 bg-teal" %>
     <% end %>
   </section>
   </main>

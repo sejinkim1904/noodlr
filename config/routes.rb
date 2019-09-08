@@ -21,7 +21,11 @@ Rails.application.routes.draw do
 
   resources :restaurants, only: [:show]
 
-  resources :reviews, only: [:new]
+  namespace :default do
+    resources :items do
+      resources :reviews, only: [:new, :create]
+    end
+  end
 
   match '*path', to: 'welcome#index', via: :all
 end

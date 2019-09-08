@@ -6,18 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create!(email: 'default@user.com', first_name: 'default', last_name: 'user', password: 'default', role: 0, registered: 'default')
+default = User.create!(email: 'default@user.com', first_name: 'default', last_name: 'user', password: 'default', role: 0, registered: 'default')
 User.create!(email: 'admin@user.com', first_name: 'admin', last_name: 'user', password: 'admin', role: 0, registered: 'admin')
 User.create!(email: 'restaurant@user.com', first_name: 'restaurant', last_name: 'user', password: 'restaurant', role: 0, registered: 'restaurant')
 
 tokio = Restaurant.create!(name: 'Tokio')
 tokio.items.create!(name: "Tonkotsu", price: 1400, category: "ramen", image: "https://s3-media2.fl.yelpcdn.com/bphoto/eMmvwCMQtOUs7GxccJu4zA/o.jpg")
-Item.last.reviews.create!(title: 'So tasteful!', body: 'This is the tastiest Tonkotsu in town', rating: 5)
-Item.last.reviews.create!(title: 'So tasteful!', body: 'This is the tastiest Tonkotsu in town', rating: 3)
+Item.last.reviews.create!(user: default, title: 'So tasteful!', body: 'This is the tastiest Tonkotsu in town', rating: 5)
+Item.last.reviews.create!(user: default, title: 'So tasteful!', body: 'This is the tastiest Tonkotsu in town', rating: 3)
 tokio.items.create!(name: 'Shoyu', price: 1300, category: 'ramen', image: 'https://s3-media3.fl.yelpcdn.com/bphoto/mrqOZ_4ev2UhJWlcUEzVHg/o.jpg')
-Item.last.reviews.create!(title: 'So tasteful!', body: 'This is the tastiest Tonkotsu in town', rating: 5)
+Item.last.reviews.create!(user: default, title: 'So tasteful!', body: 'This is the tastiest Tonkotsu in town', rating: 5)
 tokio.items.create!(name: 'Miso', price: 1100, category: 'ramen', image: 'https://s3-media4.fl.yelpcdn.com/bphoto/NzCFOr94zjfiR59mpeWDHA/o.jpg')
-Item.last.reviews.create!(title: 'So tasteful!', body: 'This is the tastiest Tonkotsu in town', rating: 5)
+Item.last.reviews.create!(user: default, title: 'So tasteful!', body: 'This is the tastiest Tonkotsu in town', rating: 5)
 
 corner_ramen = Restaurant.create!(name: 'Corner Ramen')
 corner_ramen.items.create!(name: 'Tonkotsu', price: 1500, category: 'ramen', image: 'https://s3-media3.fl.yelpcdn.com/bphoto/QwiPN5PjNzJNb5DXTkiGrQ/o.jpg')
