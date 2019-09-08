@@ -9,7 +9,7 @@
       <p>Average Rating: <%= item.average_rating.round(1) %></p>
 
       <% if current_user&.default_user? %>
-        <%= link_to @item.restaurant.name, '/restaurant' %>
+        <%= link_to @item.restaurant.name, restuarant_path(@item.restaurant) %>
       <% end %>
     </section>
   <% end %>
