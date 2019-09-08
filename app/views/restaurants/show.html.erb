@@ -8,8 +8,8 @@
       <p><%= link_to item.name, item_path(item) %></p>
       <p>Average Rating: <%= item.average_rating.round(1) %></p>
 
-      <% if current_user&.default_user? %>
-        <%= link_to @item.restaurant.name, restuarant_path(@item.restaurant) %>
+      <% if current_user&.default? %>
+        <%= link_to "Write a Review", new_review_path(@item) %>
       <% end %>
     </section>
   <% end %>
