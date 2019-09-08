@@ -4,9 +4,13 @@
   <h2>Dishes</h2>
 
   <% @restaurant.items.each do |item| %>
-    <section class='item' id='item.name'>
-      <p><%= item.name %></p>
+    <section class='item' id='<%= item.name %>'>
+      <p><%= link_to item.name, item_path(item) %></p>
       <p>Average Rating: <%= item.average_rating.round(1) %></p>
+
+      <% if current_user&.default? && current_user.registered == 'true' && current_user.reviewable?(item) %>
+        <%= link_to "Write a Review", new_default_item_review_path(item) %>
+      <% end %>
     </section>
   <% end %>
 </section>

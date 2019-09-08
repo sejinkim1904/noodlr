@@ -12,11 +12,7 @@ RSpec.describe User, type: :model do
   end
 
 	describe 'relationships' do
-		# it {should have_many :user_credentials}
-		# it {should have_many :user_videos}
-		# it {should have_many(:videos).through(:user_videos)}
-		# it {should have_many :friendships}
-		# it {should have_many(:friends).through(:friendships)}
+		it {should have_many :reviews}
 	end
 
   describe 'roles' do
@@ -57,6 +53,15 @@ RSpec.describe User, type: :model do
   end
 
   describe 'methods' do
+    before :each do
+      @user = create(:user)
+      @user.update_attributes(registered: 'true')
+      @restaurant = create(:restaurant)
+      @ramen = @restaurant.items.create!(name: "Tonkotsu", price: 1400, category: "ramen", image: "https://s3-media2.fl.yelpcdn.com/bphoto/eMmvwCMQtOUs7GxccJu4zA/o.jpg")
+    end
 
+    it 'reviewable?(item)' do
+      expect(@user.reviewable?(@ramen)).to eq(true)
+    end
   end
 end
