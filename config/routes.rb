@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/gmail/login', to: 'gmail/sessions#new', as: :gmail_login
 
   resources :users, only: [:create]
+  resources :restaurants
 
   match '*path', to: 'welcome#index', via: :all
 end
