@@ -4,13 +4,13 @@ class Default::ReviewsController < ApplicationController
   end
 
   def create
-    review = Review.create(review_params.merge(user: current_user))
+    review = Review.create(review_params.merge(user: current_user).merge(item_id: params[:item_id]))
     if review.save
       session[:item_id] = review.id
-			flash[:notice] = "Review created."
+			flash[:notice] = 'Review created.'
 			redirect_to send_registration_path
     else
-      flash[:error] = 'That email has already been taken.'
+      flash[:error] = 'Review could not be saved.'
       redirect_to new_default_item_review_path
     end
   end

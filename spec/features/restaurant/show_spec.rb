@@ -3,11 +3,12 @@ require 'rails_helper'
 describe 'Restaurant show page' do
   describe "When I visit" do
     before :each do
+      @reviwer = create(:user)
       @user = create(:user)
       @restaurant = create(:restaurant)
       @ramen = @restaurant.items.create!(name: "Tonkotsu", price: 1400, category: "ramen", image: "https://s3-media2.fl.yelpcdn.com/bphoto/eMmvwCMQtOUs7GxccJu4zA/o.jpg")
-      @ramen.reviews.create!(user: @user, title: 'So tasteful!', body: 'This is the tastiest Tonkotsu in town', rating: 5)
-      @ramen.reviews.create!(user: @user, title: 'So tasteful!', body: 'This is the tastiest Tonkotsu in town', rating: 3)
+      @ramen.reviews.create!(user: @reviwer, title: 'So tasteful!', body: 'This is the tastiest Tonkotsu in town', rating: 5)
+      @ramen.reviews.create!(user: @reviwer, title: 'So tasteful!', body: 'This is the tastiest Tonkotsu in town', rating: 3)
     end
 
     it "As a visitor" do

@@ -24,11 +24,17 @@ describe 'Restaurant show page' do
         click_on "Write a Review"
       end
 
+      expect(page).to have_content("Review for Tonkotsu")
+
       fill_in 'review[title]', with: 'So tasteful!'
       fill_in 'review[body]', with: 'This is the tastiest Tonkotsu in town'
       fill_in 'review[rating]', with: 5
 
       click_on "Submit"
+
+      expect(page).to have_content("Review created.")
+
+      visit restaurant_path(@restaurant)
 
       within ('#Tonkotsu') do
         expect(page).to have_content("Tonkotsu")
