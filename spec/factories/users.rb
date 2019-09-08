@@ -4,7 +4,7 @@ FactoryBot.define do
     first_name { Faker::Artist.name }
     last_name { Faker::Artist.name }
     password { Faker::Color.color_name }
-    registered { "true" }
+    registered { "12ad3" }
     role { :default }
   end
 

@@ -7,8 +7,8 @@
     <section class='item' id='<%= item.name %>'>
       <p><%= link_to item.name, item_path(item) %></p>
       <p>Average Rating: <%= item.average_rating.round(1) %></p>
-
-      <% if current_user&.default? %>
+      
+      <% if current_user&.default? && current_user.registered == 'true' %>
         <%= link_to "Write a Review", new_review_path(@item) %>
       <% end %>
     </section>
