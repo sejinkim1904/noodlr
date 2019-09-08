@@ -26,7 +26,7 @@ describe 'Restaurant show page' do
       expect(page).to_not have_content("Write a Review")
     end
 
-    it "As a user" do
+    it "As a registered user" do
       user = create(:user)
       user.update_attributes(registered: 'true')
       visit '/'
