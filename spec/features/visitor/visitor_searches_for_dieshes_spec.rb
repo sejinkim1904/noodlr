@@ -18,16 +18,16 @@ describe "As a visitor" do
       it "Gets a list of dishes with the matching names" do
         visit root_path
 
-        fill_in :query, with: "Tonkotsu"
+        fill_in :query, with: "tonkotsu"
         click_button 'Search'
 
-        expect(current_path).to eq(results_path)
+        expect(current_path).to eq('/search')
 
         expect(page).to have_content("2 Results")
-
+        save_and_open_page
         within "#item-#{@dish_1.id}" do
           expect(page).to have_content(@dish_1.name)
-          expect(page).to have_content("Price: #{@dish_1.price}")
+          expect(page).to have_content("Price: #{number_to_currency(@dish_1.price)}")
           expect(page).to have_content("Available at: #{@rest_1.name}")
           expect(page).to have_link(@rest_1.name)
           expect(page).to have_css("img[src*='#{@dish_1.image}']")
@@ -35,7 +35,7 @@ describe "As a visitor" do
 
         within "#item-#{@dish_4.id}" do
           expect(page).to have_content(@dish_4.name)
-          expect(page).to have_content("Price: #{@dish_4.price}")
+          expect(page).to have_content("Price: #{number_to_currency(@dish_4.price)}")
           expect(page).to have_content("Available at: #{@rest_2.name}")
           expect(page).to have_link(@rest_2.name)
           expect(page).to have_css("img[src*='#{@dish_1.image}']")
