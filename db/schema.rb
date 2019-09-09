@@ -29,10 +29,8 @@ ActiveRecord::Schema.define(version: 2019_09_07_225259) do
 
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
-    t.string "description"
-    t.string "latitude"
-    t.string "longitude"
-    t.integer "price"
+    t.decimal "latitude"
+    t.decimal "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
