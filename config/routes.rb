@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   resources :restaurants, only: [:show]
 
+  resources :search, only: [:index]
+
   namespace :default do
     resources :items do
       resources :reviews, only: [:new, :create]

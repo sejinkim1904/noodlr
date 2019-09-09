@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   include ActionView::Helpers::NumberHelper
+  include ActionView::Helpers::TextHelper
   protect_from_forgery with: :exception
   helper_method :current_user
 
