@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_09_07_225259) do
     t.integer "price"
     t.string "category"
     t.string "image"
+    t.string "status"
     t.bigint "restaurant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

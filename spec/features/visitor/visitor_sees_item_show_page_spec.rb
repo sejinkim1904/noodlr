@@ -4,7 +4,7 @@ describe 'As a visitor' do
   describe "When I visit an 'items/:id'" do
     before(:each) do
       restaurant = create(:restaurant)
-      @item = create(:item, restaurant_id: restaurant.id)
+      @item = create(:item, restaurant_id: restaurant.id, status: 'verified')
     end
 
     it "I see the item with that id including the item's\n

@@ -4,6 +4,7 @@ class Item < ApplicationRecord
   validates_presence_of :name,
                         :category,
                         :price,
+                        :status,
                         :image
 
   def average_rating
