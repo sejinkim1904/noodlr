@@ -1,12 +1,12 @@
 <h1>Review for <%= @item.name %></h1>
 
 <%= form_for [:default, @item, Review.new] do |f| %>
-  <div >
+  <div>
     <%= f.label :title %>
     <%= f.text_field :title, class: "block col-12 field" %>
   </div>
 
-  <div >
+  <div>
     <%= f.label :body %>
     <%= f.text_field :body, class: "block col-12 field" %>
   </div>
