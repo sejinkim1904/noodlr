@@ -2,4 +2,4 @@
 <h3><%= @item.name %></h3>
 <p>Price: <%= number_to_currency(@item.price) %></p>
 <p>Category: <%= @item.category %></p>
-<p>Available at: <%= link_to @item.restaurant.name, '/restaurant' %></p>
+<p>Available at: <%= link_to @item.restaurant.name, restaurant_path(@item.restaurant) %></p>

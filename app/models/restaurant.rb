@@ -1,5 +1,4 @@
 class Restaurant < ApplicationRecord
+  validates_presence_of :name, :latitude, :longitude
   has_many :items
-  validates_presence_of :name
-  
 end
