@@ -1,3 +1,13 @@
+<% provide :head_tags do %>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+        initMap()
+    });
+  </script>
+<% end %>
 <h2>Most Popular</h2>
 
 <%= button_to 'Browse More' %>
+<div id="map">
+
+</div>
