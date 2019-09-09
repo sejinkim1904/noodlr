@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     end
 
     resources :restaurants do
-      resources :items, only: [:new]
+      resources :items, only: [:new, :create]
     end
   end
 

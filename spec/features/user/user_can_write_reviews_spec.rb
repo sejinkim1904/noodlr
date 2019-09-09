@@ -69,25 +69,31 @@ describe 'Restaurant show page' do
 
       visit restaurant_path(@restaurant)
 
+      expect(page).to have_content("Average Rating: 0.0")
+
       click_on "Review a New Item"
 
       expect(page).to have_content("Review a New Item")
+      expect(current_path).to eq(new_default_restaurant_item_path(@restaurant))
 
-      save_and_open_page
+      fill_in 'item[name]', with: 'Shoyu'
+      fill_in 'item[price]', with: 1400
+      fill_in 'item[category]', with: 'ramen'
+      fill_in 'item[image]', with: "https://s3-media2.fl.yelpcdn.com/bphoto/eMmvwCMQtOUs7GxccJu4zA/o.jpg"
 
-      fill_in 'review[title]', with: 'So tasteful!'
-      fill_in 'review[body]', with: 'This is the tastiest Tonkotsu in town'
-      fill_in 'review[rating]', with: 5
+      fill_in 'item[review][title]', with: 'So tasteful!'
+      fill_in 'item[review][body]', with: 'This is the tastiest Shoyu in town'
+      fill_in 'item[review][rating]', with: 5
 
       click_on "Submit"
 
-      expect(page).to have_content("Review created.")
-      expect(current_path).to eq(item_path(@ramen))
+      expect(page).to have_content("Item has been suggested to restaurant owner for approval.")
+      expect(current_path).to eq(restaurant_path(@restaurant))
 
       visit restaurant_path(@restaurant)
 
-      within ('#Tonkotsu') do
-        expect(page).to have_content("Tonkotsu")
+      within ('#Shoyu') do
+        expect(page).to have_content("Shoyu")
         expect(page).to have_content("Average Rating: 5.0")
         expect(page).to_not have_content("Write a Review")
       end

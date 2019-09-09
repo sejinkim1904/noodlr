@@ -1,21 +1,19 @@
 class Default::ItemsController < Default::BaseController
   def new
+    @restaurant = Restaurant.find(params[:restaurant_id])
     @item = Item.new
   end
 
   def create
-    unless current_user.reviewable?(params[:item_id])
-      flash[:error] = 'Review could not be saved.'
-      redirect_to new_default_item_review_path(params[:item_id])
-    end
-    review = Review.create(review_params.merge(user: current_user).merge(item_id: params[:item_id]))
-    if review.save
+    item = Item.create(item_params.merge(status: 'pending').merge(restaurant_id: params[:restaurant_id]))
+    review = Review.create(review_params.merge(user: current_user).merge(item: item))
+    if item.save && review.save
       session[:item_id] = review.id
-			flash[:notice] = 'Review created.'
-			redirect_to item_path(params[:item_id])
+			flash[:notice] = 'Item has been suggested to restaurant owner for approval.'
+			redirect_to restaurant_path(params[:restaurant_id])
     else
-      flash[:error] = 'Review could not be saved.'
-      redirect_to new_default_item_review_path(params[:item_id])
+      flash[:error] = 'Item could not be saved.'
+      redirect_to new_default_restaurant_item_path(params[:restaurant_id])
     end
   end
 
@@ -26,6 +24,6 @@ class Default::ItemsController < Default::BaseController
   end
 
   def review_params
-    params.require(:item).permit(:title, :body, :rating)
+    params[:item].require(:review).permit(:title, :body, :rating)
   end
 end
