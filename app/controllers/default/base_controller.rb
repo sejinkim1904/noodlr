@@ -4,8 +4,6 @@ class Default::BaseController < ApplicationController
   private
 
   def require_default
-    unless current_user.default? && current_user.registered == 'true'
-      redirect_to root_path
-    end
+    redirect_to root_path unless current_user.default? && current_user.registered == 'true'
   end
 end
