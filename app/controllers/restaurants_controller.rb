@@ -5,9 +5,6 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.all
   end
 
-  def show
-  end
-
   def new
     @restaurant = Restaurant.new
   end
@@ -57,4 +54,9 @@ class RestaurantsController < ApplicationController
     def restaurant_params
       params.require(:restaurant).permit(:name, :latitude, :longitude)
     end
+
+  def show
+    @restaurant = Restaurant.includes(:items).find(params[:id])
+  end
+
 end

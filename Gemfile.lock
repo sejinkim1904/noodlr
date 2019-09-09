@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: 6a20e21b9b73590d8481ef8180be244d290c6c0a
+  branch: master
+  specs:
+    faker (2.2.1)
+      i18n (~> 1.6.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -33,6 +41,8 @@ GEM
       activemodel (= 5.2.3)
       activesupport (= 5.2.3)
       arel (>= 9.0)
+    activerecord-import (1.0.2)
+      activerecord (>= 3.2)
     activestorage (5.2.3)
       actionpack (= 5.2.3)
       activerecord (= 5.2.3)
@@ -213,12 +223,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-import
   bcrypt
   bootsnap (>= 1.1.0)
   byebug
   capybara
   coffee-rails (~> 4.2)
   factory_bot_rails
+  faker!
   figaro
   jbuilder (~> 2.5)
   launchy
