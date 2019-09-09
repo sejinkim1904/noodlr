@@ -25,6 +25,10 @@ Rails.application.routes.draw do
     resources :items do
       resources :reviews, only: [:new, :create]
     end
+
+    resources :restaurants do
+      resources :items, only: [:new]
+    end
   end
 
   match '*path', to: 'welcome#index', via: :all
