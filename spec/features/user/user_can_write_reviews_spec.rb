@@ -73,7 +73,7 @@ describe 'Restaurant show page' do
 
       expect(page).to have_content("Review a New Item")
 
-      
+      save_and_open_page
 
       fill_in 'review[title]', with: 'So tasteful!'
       fill_in 'review[body]', with: 'This is the tastiest Tonkotsu in town'

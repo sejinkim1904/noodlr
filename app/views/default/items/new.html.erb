@@ -1,0 +1,43 @@
+<h1>Review a New Item</h1>
+
+<%= form_for [:default, @restaurant, @item] do |f| %>
+
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "block col-12 field" %>
+  </div>
+
+  <div>
+    <%= f.label :price %>
+    <%= f.number_field :price, class: "block col-12 field" %>
+  </div>
+
+  <div>
+    <%= f.label :category %>
+    <%= f.text_field :category, class: "block col-12 field" %>
+  </div>
+
+  <div>
+    <%= f.label :image %>
+    <%= f.text_field :image, class: "block col-12 field" %>
+  </div>
+
+  <%= f.fields_for :review do |g| %>
+    <div>
+      <%= g.label :title %>
+      <%= g.text_field :title, class: "block col-12 field" %>
+    </div>
+
+    <div>
+      <%= g.label :body %>
+      <%= g.text_field :body, class: "block col-12 field" %>
+    </div>
+
+    <div>
+      <%= g.label :rating %>
+      <%= g.number_field :rating, class: "block col-12 field" %>
+    </div>
+  <% end %>
+
+  <%= f.submit 'Submit', class: "mt2 btn btn-primary mb1 bg-teal" %>
+<% end %>
