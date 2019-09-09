@@ -6,7 +6,7 @@ class User < ApplicationRecord
   enum role: [:default, :restaurant, :photographer, :critic, :admin]
   has_secure_password
 
-  def reviewable?(item)
-    Review.where(item: item, user: self).empty?
+  def reviewable?(item_id)
+    Review.where(item_id: item_id, user: self).empty?
   end
 end

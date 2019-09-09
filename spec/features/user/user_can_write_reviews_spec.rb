@@ -43,5 +43,18 @@ describe 'Restaurant show page' do
         expect(page).to_not have_content("Write a Review")
       end
     end
+
+    it 'unregistered user cannot leave a review' do
+      user = create(:user)
+      visit '/'
+      click_on "Sign In"
+      fill_in 'session[email]', with: user.email
+      fill_in 'session[password]', with: user.password
+      click_on 'Log In'
+
+      visit new_default_item_review_path(@ramen)
+
+      expect(current_path).to eq('/')
+    end
   end
 end
