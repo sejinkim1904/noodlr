@@ -2,6 +2,10 @@
 // All this logic will automatically be available in application.js.
 var map, infoWindow;
 function initMap() {
+  var markers = [
+    ['Tokio', 39.7586035, -104.9974398],
+    ['Osaka', 39.7382478, -105.0055633]
+  ];
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 14
   });
@@ -15,6 +19,20 @@ function initMap() {
       };
 
       map.setCenter(pos);
+      for( i = 0; i < markers.length; i++) {
+        var position = new google.maps.LatLng(markers[i][1], markers[i][2])
+        marker = new google.maps.Marker({
+          position: position,
+          map: map,
+          title: markers[i][0]
+        });
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+          return function () {
+            infoWindow.setContent(markers[i][0])
+            infoWindow.open(map, marker);
+          }
+        })(marker, i));
+      }
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
     });
