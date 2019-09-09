@@ -1,18 +1,17 @@
 require 'rails_helper'
 
-
 describe "As a visitor" do
   describe "When i visit '/'" do
     describe "And I enter a dish name and click 'search'" do
       before(:each) do
         @rest_1 = create(:restaurant)
         @rest_2 = create(:restaurant)
-        @dish_1 = create(:item, name: "Tonkotsu", restaurant: @rest_1)
-        @dish_2 = create(:item, name: "Miso", restaurant: @rest_1)
-        @dish_3 = create(:item, name: "Shoyu", restaurant: @rest_1)
-        @dish_4 = create(:item, name: "Tonkotsu", restaurant: @rest_2)
-        @dish_5 = create(:item, name: "Miso", restaurant: @rest_2)
-        @dish_6 = create(:item, name: "Shoyu", restaurant: @rest_2)
+        @dish_1 = create(:item, status: 'verified', name: "Tonkotsu", restaurant: @rest_1)
+        @dish_2 = create(:item, status: 'verified', name: "Miso", restaurant: @rest_1)
+        @dish_3 = create(:item, status: 'verified', name: "Shoyu", restaurant: @rest_1)
+        @dish_4 = create(:item, status: 'verified', name: "Tonkotsu", restaurant: @rest_2)
+        @dish_5 = create(:item, status: 'verified', name: "Miso", restaurant: @rest_2)
+        @dish_6 = create(:item, status: 'verified', name: "Shoyu", restaurant: @rest_2)
       end
 
       it "Gets a list of dishes with the matching names" do
@@ -24,7 +23,7 @@ describe "As a visitor" do
         expect(current_path).to eq('/search')
 
         expect(page).to have_content("2 Results")
-        save_and_open_page
+
         within "#item-#{@dish_1.id}" do
           expect(page).to have_content(@dish_1.name)
           expect(page).to have_content("Price: #{number_to_currency(@dish_1.price)}")
