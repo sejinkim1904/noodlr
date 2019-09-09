@@ -1,0 +1,888 @@
+{
+    "businesses": [
+        {
+            "id": "Wqm-vAOcmFal9e65XBpVog",
+            "alias": "kyoto-ramen-denver",
+            "name": "Kyoto Ramen",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/yayrTfuXR4jFgHtsZanoJg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/kyoto-ramen-denver?adjust_creative=PbbSZk4v_9t2Yo63yeTrAw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=PbbSZk4v_9t2Yo63yeTrAw",
+            "review_count": 5,
+            "categories": [
+                {
+                    "alias": "ramen",
+                    "title": "Ramen"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 39.74569,
+                "longitude": -104.99202
+            },
+            "transactions": [],
+            "location": {
+                "address1": "1617 California St",
+                "address2": "Ste B",
+                "address3": null,
+                "city": "Denver",
+                "zip_code": "80202",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "1617 California St",
+                    "Ste B",
+                    "Denver, CO 80202"
+                ]
+            },
+            "phone": "+13036233839",
+            "display_phone": "(303) 623-3839",
+            "distance": 2180.2151372797302
+        },
+        {
+            "id": "HgRXwPw65V2LVJj4CpQ0dA",
+            "alias": "ajinoya-ramen-denver",
+            "name": "Ajinoya Ramen",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/eOoZA4XnbvMCsj-WriFPmw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/ajinoya-ramen-denver?adjust_creative=PbbSZk4v_9t2Yo63yeTrAw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=PbbSZk4v_9t2Yo63yeTrAw",
+            "review_count": 176,
+            "categories": [
+                {
+                    "alias": "ramen",
+                    "title": "Ramen"
+                },
+                {
+                    "alias": "poke",
+                    "title": "Poke"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 39.69142,
+                "longitude": -104.94039
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "1390 S Colorado Blvd",
+                "address2": "Ste 120",
+                "address3": null,
+                "city": "Denver",
+                "zip_code": "80222",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "1390 S Colorado Blvd",
+                    "Ste 120",
+                    "Denver, CO 80222"
+                ]
+            },
+            "phone": "+17206388678",
+            "display_phone": "(720) 638-8678",
+            "distance": 5529.310394482863
+        },
+        {
+            "id": "pu_oTsfu4kFcmP2Xms_X_Q",
+            "alias": "uncle-denver",
+            "name": "Uncle",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/7BS7oG4hMwbL0vm6SmVpeA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/uncle-denver?adjust_creative=PbbSZk4v_9t2Yo63yeTrAw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=PbbSZk4v_9t2Yo63yeTrAw",
+            "review_count": 1180,
+            "categories": [
+                {
+                    "alias": "asianfusion",
+                    "title": "Asian Fusion"
+                },
+                {
+                    "alias": "ramen",
+                    "title": "Ramen"
+                },
+                {
+                    "alias": "noodles",
+                    "title": "Noodles"
+                }
+            ],
+            "rating": 4.0,
+            "coordinates": {
+                "latitude": 39.7621349,
+                "longitude": -105.0133389
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "2215 W 32nd Ave",
+                "address2": "",
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80211",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "2215 W 32nd Ave",
+                    "Denver, CO 80211"
+                ]
+            },
+            "phone": "+13034333263",
+            "display_phone": "(303) 433-3263",
+            "distance": 4723.92674260023
+        },
+        {
+            "id": "rJve8hI2yxJL9pykzIOQIw",
+            "alias": "seras-ramen-enclave-denver-2",
+            "name": "Sera's Ramen Enclave",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/HLj7rzO38_GBaCLHSoZ8wg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/seras-ramen-enclave-denver-2?adjust_creative=PbbSZk4v_9t2Yo63yeTrAw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=PbbSZk4v_9t2Yo63yeTrAw",
+            "review_count": 297,
+            "categories": [
+                {
+                    "alias": "ramen",
+                    "title": "Ramen"
+                },
+                {
+                    "alias": "korean",
+                    "title": "Korean"
+                },
+                {
+                    "alias": "vietnamese",
+                    "title": "Vietnamese"
+                }
+            ],
+            "rating": 4.0,
+            "coordinates": {
+                "latitude": 39.76188,
+                "longitude": -105.03401
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "3472 W 32nd Ave",
+                "address2": "",
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80211",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "3472 W 32nd Ave",
+                    "Denver, CO 80211"
+                ]
+            },
+            "phone": "+13034552858",
+            "display_phone": "(303) 455-2858",
+            "distance": 6190.783542454265
+        },
+        {
+            "id": "3oNlN1Nz4TgjslaDsTEMrw",
+            "alias": "tycoon-ramen-and-sushi-denver",
+            "name": "Tycoon Ramen and Sushi",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/8mkTD8mduptoMRctKn89xA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/tycoon-ramen-and-sushi-denver?adjust_creative=PbbSZk4v_9t2Yo63yeTrAw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=PbbSZk4v_9t2Yo63yeTrAw",
+            "review_count": 215,
+            "categories": [
+                {
+                    "alias": "ramen",
+                    "title": "Ramen"
+                },
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                }
+            ],
+            "rating": 4.0,
+            "coordinates": {
+                "latitude": 39.7398648818036,
+                "longitude": -104.982504062355
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "338 E Colfax Ave",
+                "address2": "",
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80203",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "338 E Colfax Ave",
+                    "Denver, CO 80203"
+                ]
+            },
+            "phone": "+13038322367",
+            "display_phone": "(303) 832-2367",
+            "distance": 1153.984635414966
+        },
+        {
+            "id": "US3Sa3FhlASsY8kmZ4Wv0w",
+            "alias": "menya-noodle-bar-denver-4",
+            "name": "Menya Noodle Bar",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/_D-LgV_S5eKPvpwm-uWVaA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/menya-noodle-bar-denver-4?adjust_creative=PbbSZk4v_9t2Yo63yeTrAw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=PbbSZk4v_9t2Yo63yeTrAw",
+            "review_count": 521,
+            "categories": [
+                {
+                    "alias": "noodles",
+                    "title": "Noodles"
+                }
+            ],
+            "rating": 4.0,
+            "coordinates": {
+                "latitude": 39.74716,
+                "longitude": -104.99429
+            },
+            "transactions": [
+                "delivery",
+                "pickup"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "951 16th St",
+                "address2": "",
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80202",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "951 16th St",
+                    "Denver, CO 80202"
+                ]
+            },
+            "phone": "+13036078888",
+            "display_phone": "(303) 607-8888",
+            "distance": 2409.262257286993
+        },
+        {
+            "id": "oqMpIzr4snT92EzARVztSw",
+            "alias": "corner-ramen-denver",
+            "name": "Corner Ramen",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/JP9utK6T-e7Sdpm8iNoEwQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/corner-ramen-denver?adjust_creative=PbbSZk4v_9t2Yo63yeTrAw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=PbbSZk4v_9t2Yo63yeTrAw",
+            "review_count": 184,
+            "categories": [
+                {
+                    "alias": "ramen",
+                    "title": "Ramen"
+                },
+                {
+                    "alias": "asianfusion",
+                    "title": "Asian Fusion"
+                }
+            ],
+            "rating": 4.0,
+            "coordinates": {
+                "latitude": 39.7646151055781,
+                "longitude": -104.967441364202
+            },
+            "transactions": [
+                "delivery",
+                "pickup"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "1629 Bruce Randolph Ave",
+                "address2": "",
+                "address3": null,
+                "city": "Denver",
+                "zip_code": "80205",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "1629 Bruce Randolph Ave",
+                    "Denver, CO 80205"
+                ]
+            },
+            "phone": "+13032920250",
+            "display_phone": "(303) 292-0250",
+            "distance": 3243.6263104182135
+        },
+        {
+            "id": "qMc717YSPhV7Tq4OReKiBQ",
+            "alias": "tatsu-izakaya-denver-2",
+            "name": "Tatsu Izakaya",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/Jp_s-4d91ltRO9HEgpvWzQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/tatsu-izakaya-denver-2?adjust_creative=PbbSZk4v_9t2Yo63yeTrAw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=PbbSZk4v_9t2Yo63yeTrAw",
+            "review_count": 44,
+            "categories": [
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                },
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                },
+                {
+                    "alias": "soup",
+                    "title": "Soup"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 39.67956,
+                "longitude": -104.95891
+            },
+            "transactions": [
+                "delivery",
+                "pickup"
+            ],
+            "location": {
+                "address1": "2022 S University Blvd",
+                "address2": null,
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80210",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "2022 S University Blvd",
+                    "Denver, CO 80210"
+                ]
+            },
+            "phone": "+13037778388",
+            "display_phone": "(303) 777-8388",
+            "distance": 6305.337890673034
+        },
+        {
+            "id": "dkWZZ8XmWW3oDHxrs278cA",
+            "alias": "sukiya-ramen-greenwood-village-3",
+            "name": "Sukiya Ramen",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/GdTSgxpY7Ax5yShqCPcAgw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/sukiya-ramen-greenwood-village-3?adjust_creative=PbbSZk4v_9t2Yo63yeTrAw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=PbbSZk4v_9t2Yo63yeTrAw",
+            "review_count": 273,
+            "categories": [
+                {
+                    "alias": "ramen",
+                    "title": "Ramen"
+                },
+                {
+                    "alias": "poke",
+                    "title": "Poke"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 39.5963568567999,
+                "longitude": -104.897810991402
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "7939 E Arapahoe Rd",
+                "address2": "Ste 110",
+                "address3": null,
+                "city": "Greenwood Village",
+                "zip_code": "80112",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "7939 E Arapahoe Rd",
+                    "Ste 110",
+                    "Greenwood Village, CO 80112"
+                ]
+            },
+            "phone": "+17207085477",
+            "display_phone": "(720) 708-5477",
+            "distance": 16670.528194257964
+        },
+        {
+            "id": "CmPmO4o5d-CFqN3o3HSXaA",
+            "alias": "osaka-ramen-denver",
+            "name": "Osaka Ramen",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/vskEMdfTglrMdQiEY3zaVA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/osaka-ramen-denver?adjust_creative=PbbSZk4v_9t2Yo63yeTrAw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=PbbSZk4v_9t2Yo63yeTrAw",
+            "review_count": 395,
+            "categories": [
+                {
+                    "alias": "ramen",
+                    "title": "Ramen"
+                },
+                {
+                    "alias": "noodles",
+                    "title": "Noodles"
+                }
+            ],
+            "rating": 3.5,
+            "coordinates": {
+                "latitude": 39.75954,
+                "longitude": -104.98609
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "2611 Walnut St",
+                "address2": null,
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80205",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "2611 Walnut St",
+                    "Denver, CO 80205"
+                ]
+            },
+            "phone": "+13039557938",
+            "display_phone": "(303) 955-7938",
+            "distance": 2991.6147738249897
+        },
+        {
+            "id": "ewCTNd0cUPMY32kD5opphw",
+            "alias": "rolls-by-chubby-cattle-denver",
+            "name": "Rolls by Chubby Cattle",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/hOYRzOBnNzoOqrVBlpri8g/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/rolls-by-chubby-cattle-denver?adjust_creative=PbbSZk4v_9t2Yo63yeTrAw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=PbbSZk4v_9t2Yo63yeTrAw",
+            "review_count": 581,
+            "categories": [
+                {
+                    "alias": "conveyorsushi",
+                    "title": "Conveyor Belt Sushi"
+                },
+                {
+                    "alias": "ramen",
+                    "title": "Ramen"
+                },
+                {
+                    "alias": "hotpot",
+                    "title": "Hot Pot"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 39.71667,
+                "longitude": -104.98732
+            },
+            "transactions": [
+                "restaurant_reservation",
+                "pickup",
+                "delivery"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "2 Broadway",
+                "address2": null,
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80203",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "2 Broadway",
+                    "Denver, CO 80203"
+                ]
+            },
+            "phone": "+18888876557",
+            "display_phone": "(888) 887-6557",
+            "distance": 2542.4192011950176
+        },
+        {
+            "id": "5JeF04kCpzzuOjuAhGbzdw",
+            "alias": "katsu-ramen-aurora",
+            "name": "Katsu Ramen",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/lKjxnz5Ij2uaNb9toBMiyQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/katsu-ramen-aurora?adjust_creative=PbbSZk4v_9t2Yo63yeTrAw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=PbbSZk4v_9t2Yo63yeTrAw",
+            "review_count": 545,
+            "categories": [
+                {
+                    "alias": "ramen",
+                    "title": "Ramen"
+                }
+            ],
+            "rating": 4.0,
+            "coordinates": {
+                "latitude": 39.681558,
+                "longitude": -104.864961
+            },
+            "transactions": [
+                "delivery"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "1930 S Havana St",
+                "address2": "Unit 4",
+                "address3": "",
+                "city": "Aurora",
+                "zip_code": "80014",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "1930 S Havana St",
+                    "Unit 4",
+                    "Aurora, CO 80014"
+                ]
+            },
+            "phone": "+13037512222",
+            "display_phone": "(303) 751-2222",
+            "distance": 10822.319837145262
+        },
+        {
+            "id": "9aZRlwqxx0r709kgOGeCcw",
+            "alias": "uncle-denver-2",
+            "name": "Uncle",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/wp0q3gm54cG39J4UJW5JwQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/uncle-denver-2?adjust_creative=PbbSZk4v_9t2Yo63yeTrAw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=PbbSZk4v_9t2Yo63yeTrAw",
+            "review_count": 20,
+            "categories": [
+                {
+                    "alias": "ramen",
+                    "title": "Ramen"
+                },
+                {
+                    "alias": "cocktailbars",
+                    "title": "Cocktail Bars"
+                }
+            ],
+            "rating": 4.0,
+            "coordinates": {
+                "latitude": 39.71497,
+                "longitude": -104.98159
+            },
+            "transactions": [],
+            "location": {
+                "address1": "95 S Pennsylvania St",
+                "address2": "",
+                "address3": null,
+                "city": "Denver",
+                "zip_code": "80209",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "95 S Pennsylvania St",
+                    "Denver, CO 80209"
+                ]
+            },
+            "phone": "+17206381859",
+            "display_phone": "(720) 638-1859",
+            "distance": 2503.8355246190117
+        },
+        {
+            "id": "ynDNDHHQlAjpBs5GIB8HeQ",
+            "alias": "ramen-star-denver",
+            "name": "Ramen Star",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/5yyA_0xVVKWOtnlUWR8wew/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/ramen-star-denver?adjust_creative=PbbSZk4v_9t2Yo63yeTrAw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=PbbSZk4v_9t2Yo63yeTrAw",
+            "review_count": 50,
+            "categories": [
+                {
+                    "alias": "ramen",
+                    "title": "Ramen"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 39.77262,
+                "longitude": -105.011101
+            },
+            "transactions": [],
+            "location": {
+                "address1": "4044 Tejon St",
+                "address2": null,
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80211",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "4044 Tejon St",
+                    "Denver, CO 80211"
+                ]
+            },
+            "phone": "+13034553787",
+            "display_phone": "(303) 455-3787",
+            "distance": 5404.873369666175
+        },
+        {
+            "id": "GguCrlC7ANcd_uH-e5t_iA",
+            "alias": "the-ramen-house-denver-2",
+            "name": "The Ramen House",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/v_aW8v0GWtBu933qANIK4Q/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/the-ramen-house-denver-2?adjust_creative=PbbSZk4v_9t2Yo63yeTrAw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=PbbSZk4v_9t2Yo63yeTrAw",
+            "review_count": 122,
+            "categories": [
+                {
+                    "alias": "ramen",
+                    "title": "Ramen"
+                }
+            ],
+            "rating": 3.5,
+            "coordinates": {
+                "latitude": 39.6787,
+                "longitude": -104.95896
+            },
+            "transactions": [
+                "delivery",
+                "pickup"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "2076 S University Blvd",
+                "address2": "",
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80210",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "2076 S University Blvd",
+                    "Denver, CO 80210"
+                ]
+            },
+            "phone": "+17206967847",
+            "display_phone": "(720) 696-7847",
+            "distance": 6390.860919429652
+        },
+        {
+            "id": "hcnUiukMpKwxM1khk91QPA",
+            "alias": "sasuke-ramen-arvada-2",
+            "name": "Sasuke Ramen",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/z_Bo36uXEY0h10xgO2CjWA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/sasuke-ramen-arvada-2?adjust_creative=PbbSZk4v_9t2Yo63yeTrAw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=PbbSZk4v_9t2Yo63yeTrAw",
+            "review_count": 72,
+            "categories": [
+                {
+                    "alias": "ramen",
+                    "title": "Ramen"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 39.8356061064511,
+                "longitude": -105.08268552332
+            },
+            "transactions": [],
+            "location": {
+                "address1": "7705 Wadsworth Blvd",
+                "address2": "Unit B",
+                "address3": null,
+                "city": "Arvada",
+                "zip_code": "80003",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "7705 Wadsworth Blvd",
+                    "Unit B",
+                    "Arvada, CO 80003"
+                ]
+            },
+            "phone": "+17206967831",
+            "display_phone": "(720) 696-7831",
+            "distance": 14702.1394129534
+        },
+        {
+            "id": "RK7zA0atwXQWpSlg8rPUbQ",
+            "alias": "mr-ramen-parker",
+            "name": "Mr Ramen",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/6QmyHMhD56-9OnTbCJLW2w/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/mr-ramen-parker?adjust_creative=PbbSZk4v_9t2Yo63yeTrAw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=PbbSZk4v_9t2Yo63yeTrAw",
+            "review_count": 59,
+            "categories": [
+                {
+                    "alias": "ramen",
+                    "title": "Ramen"
+                },
+                {
+                    "alias": "salad",
+                    "title": "Salad"
+                },
+                {
+                    "alias": "tradamerican",
+                    "title": "American (Traditional)"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 39.54694,
+                "longitude": -104.79275
+            },
+            "transactions": [
+                "delivery",
+                "pickup"
+            ],
+            "location": {
+                "address1": "9328 Jordan Rd",
+                "address2": "Ste 105",
+                "address3": null,
+                "city": "Parker",
+                "zip_code": "80134",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "9328 Jordan Rd",
+                    "Ste 105",
+                    "Parker, CO 80134"
+                ]
+            },
+            "phone": "+17205190141",
+            "display_phone": "(720) 519-0141",
+            "distance": 25892.157655489784
+        },
+        {
+            "id": "8aivmxP74m1r9DceySYN2w",
+            "alias": "menya-lohi-denver-2",
+            "name": "Menya - Lohi",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/1HctH76o6ZEq-NLuKLYNbA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/menya-lohi-denver-2?adjust_creative=PbbSZk4v_9t2Yo63yeTrAw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=PbbSZk4v_9t2Yo63yeTrAw",
+            "review_count": 104,
+            "categories": [
+                {
+                    "alias": "ramen",
+                    "title": "Ramen"
+                },
+                {
+                    "alias": "poke",
+                    "title": "Poke"
+                },
+                {
+                    "alias": "noodles",
+                    "title": "Noodles"
+                }
+            ],
+            "rating": 4.0,
+            "coordinates": {
+                "latitude": 39.75464,
+                "longitude": -105.00515
+            },
+            "transactions": [
+                "delivery",
+                "pickup"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "1590 Little Raven St",
+                "address2": "Ste 170",
+                "address3": null,
+                "city": "Denver",
+                "zip_code": "80202",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "1590 Little Raven St",
+                    "Ste 170",
+                    "Denver, CO 80202"
+                ]
+            },
+            "phone": "+17206966769",
+            "display_phone": "(720) 696-6769",
+            "distance": 3647.3284381440963
+        },
+        {
+            "id": "uwZYLfdWxni43MqfY6y7sw",
+            "alias": "tokio-denver-3",
+            "name": "Tokio",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/0a37STOQWLGNnrBHzbKnNw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/tokio-denver-3?adjust_creative=PbbSZk4v_9t2Yo63yeTrAw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=PbbSZk4v_9t2Yo63yeTrAw",
+            "review_count": 377,
+            "categories": [
+                {
+                    "alias": "ramen",
+                    "title": "Ramen"
+                },
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                },
+                {
+                    "alias": "japacurry",
+                    "title": "Japanese Curry"
+                }
+            ],
+            "rating": 4.0,
+            "coordinates": {
+                "latitude": 39.7586101000912,
+                "longitude": -104.997435813492
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "2907 Huron St",
+                "address2": "Unit 103",
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80202",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "2907 Huron St",
+                    "Unit 103",
+                    "Denver, CO 80202"
+                ]
+            },
+            "phone": "+17206392911",
+            "display_phone": "(720) 639-2911",
+            "distance": 3463.179955416658
+        },
+        {
+            "id": "L_1imeYITxTpqjxNB1GcFg",
+            "alias": "naked-bowl-denver",
+            "name": "Naked Bowl",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/9R8oyttqwgLk0t2LRUpTHg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/naked-bowl-denver?adjust_creative=PbbSZk4v_9t2Yo63yeTrAw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=PbbSZk4v_9t2Yo63yeTrAw",
+            "review_count": 37,
+            "categories": [
+                {
+                    "alias": "asianfusion",
+                    "title": "Asian Fusion"
+                },
+                {
+                    "alias": "breakfast_brunch",
+                    "title": "Breakfast & Brunch"
+                },
+                {
+                    "alias": "ramen",
+                    "title": "Ramen"
+                }
+            ],
+            "rating": 4.0,
+            "coordinates": {
+                "latitude": 39.74154,
+                "longitude": -104.98768
+            },
+            "transactions": [
+                "delivery",
+                "pickup"
+            ],
+            "location": {
+                "address1": "110 16th St",
+                "address2": "Ste 110",
+                "address3": "",
+                "city": "Denver",
+                "zip_code": "80202",
+                "country": "US",
+                "state": "CO",
+                "display_address": [
+                    "110 16th St",
+                    "Ste 110",
+                    "Denver, CO 80202"
+                ]
+            },
+            "phone": "+13038252695",
+            "display_phone": "(303) 825-2695",
+            "distance": 1629.498417546266
+        }
+    ],
+    "total": 269,
+    "region": {
+        "center": {
+            "longitude": -104.97024536132812,
+            "latitude": 39.73552421220229
+        }
+    }
+}
