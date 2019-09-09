@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/instagram/login', to: 'instagram/sessions#new', as: :instagram_login
 
   resources :users, only: [:create]
+  resources :restaurants
 
   resources :items, only: [:show]
 
