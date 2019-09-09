@@ -1,4 +1,36 @@
-<h1><%= @restaurant.name %></h1>
+<% provide :head_tags do %>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+        initMap(<%=@restaurant.latitude%>, <%=@restaurant.longitude%>)
+    });
+  </script>
+<% end %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @restaurant.name %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @restaurant.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @restaurant.longitude %>
+</p>
+
+<div id="map">
+
+</div>
+
+
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+<%= link_to 'Back', restaurants_path %>
+
+# <h1><%= @restaurant.name %></h1>
 
 <section class='items'>
   <h2>Dishes</h2>
