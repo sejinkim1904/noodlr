@@ -9,7 +9,6 @@ class Item < ApplicationRecord
 
   validates :price, presence: true,
   numericality: { greater_than: 0, less_than: 100 }
-  # format: { with: /\A\d+(?:\.\d{2})?\z/ }
 
   def average_rating
     rating = reviews.average(:rating)
