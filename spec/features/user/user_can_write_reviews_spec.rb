@@ -4,7 +4,7 @@ describe 'Restaurant show page' do
   describe "When I visit" do
     before :each do
       @restaurant = create(:restaurant)
-      @ramen = @restaurant.items.create!(name: "Tonkotsu", price: 1400, category: "ramen", image: "https://s3-media2.fl.yelpcdn.com/bphoto/eMmvwCMQtOUs7GxccJu4zA/o.jpg", status: 'verified')
+      @ramen = @restaurant.items.create!(name: "Tonkotsu", price: 14, category: "ramen", image: "https://s3-media2.fl.yelpcdn.com/bphoto/eMmvwCMQtOUs7GxccJu4zA/o.jpg", status: 'verified')
     end
 
     it "A registered user can review an item" do
@@ -77,7 +77,7 @@ describe 'Restaurant show page' do
       expect(current_path).to eq(new_default_restaurant_item_path(@restaurant))
 
       fill_in 'item[name]', with: 'Shoyu'
-      fill_in 'item[price]', with: 1400
+      fill_in 'item[price]', with: 14
       fill_in 'item[category]', with: 'ramen'
       fill_in 'item[image]', with: "https://s3-media2.fl.yelpcdn.com/bphoto/eMmvwCMQtOUs7GxccJu4zA/o.jpg"
 

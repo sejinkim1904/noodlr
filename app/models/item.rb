@@ -4,9 +4,11 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :reviews
   validates_presence_of :name,
                         :category,
-                        :price,
                         :status,
                         :image
+
+  validates :price, presence: true,
+  numericality: { greater_than: 0, less_than: 100 }
 
   def average_rating
     rating = reviews.average(:rating)
