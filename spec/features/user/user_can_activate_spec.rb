@@ -5,11 +5,9 @@ describe 'user can register an account' do
 		visit '/'
 		click_on 'Sign In'
 		click_on 'Sign Up'
-		fill_in 'user[email]', with: 'jimbob@aol.com'
-    fill_in 'user[first_name]', with: 'Jim'
-    fill_in 'user[last_name]', with: 'Bob'
-    fill_in 'user[password]', with: 'password'
-    fill_in 'user[password_confirmation]', with: 'password'
+		fill_in 'email[email]', with: 'jimbob@aol.com'
+    fill_in 'email[password]', with: 'password'
+    fill_in 'email[password_confirmation]', with: 'password'
     click_on 'Create Account'
 
     expect(current_path).to eq(dashboard_path)
