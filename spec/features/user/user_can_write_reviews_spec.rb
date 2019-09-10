@@ -86,7 +86,7 @@ describe 'Restaurant show page' do
       fill_in 'item[review][rating]', with: 5
 
       click_on "Submit"
-      save_and_open_page
+
       expect(page).to have_content("Item has been suggested to restaurant owner for approval.")
       expect(current_path).to eq(restaurant_path(@restaurant))
 
