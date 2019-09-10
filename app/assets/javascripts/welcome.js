@@ -2,10 +2,6 @@
 // All this logic will automatically be available in application.js.
 var map, infoWindow;
 function initMap() {
-  var markers = [
-    ['Tokio', 39.7586035, -104.9974398],
-    ['Osaka', 39.7382478, -105.0055633]
-  ];
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 14
   });
