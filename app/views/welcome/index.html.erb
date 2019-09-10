@@ -1,3 +1,27 @@
-<h2>Most Popular</h2>
+<% provide :head_tags do %>
+  <script>
+    var markers = [];
 
-<%= button_to 'Browse More' %>
+    <% @restaurants.each do |restaurant| %>
+      var restaurant = ['<%= restaurant.name %>', <%= restaurant.latitude %>, <%= restaurant.longitude %>]
+      markers.push(restaurant)
+    <% end %>
+
+    document.addEventListener("DOMContentLoaded", function(){
+        initMap()
+    });
+  </script>
+<% end %>
+
+<div id="map">
+
+</div>
+
+<section id="nearby">
+  <h2>Nearby Restaurants</h2>
+  <ul>
+  <% @restaurants.each do |restaurant| %>
+    <li><%= restaurant.name %></li>
+  <% end %>
+</ul>
+</section>
