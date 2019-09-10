@@ -57,7 +57,7 @@ RSpec.describe User, type: :model do
       @user = create(:user)
       @user.update_attributes(registered: 'true')
       @restaurant = create(:restaurant)
-      @ramen = @restaurant.items.create!(name: "Tonkotsu", price: 1400, category: "ramen", image: "https://s3-media2.fl.yelpcdn.com/bphoto/eMmvwCMQtOUs7GxccJu4zA/o.jpg", status: 'verified')
+      @ramen = @restaurant.items.create!(name: "Tonkotsu", price: 14, category: "ramen", image: "https://s3-media2.fl.yelpcdn.com/bphoto/eMmvwCMQtOUs7GxccJu4zA/o.jpg", status: 'verified')
     end
 
     it 'reviewable?(item)' do

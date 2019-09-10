@@ -34,6 +34,6 @@ describe 'user can register an account' do
 
 		page.driver.submit :get, activation_path("5000"), {}
 
-		expect(page).to have_content("User not found!")		
+		expect(page).to have_content("User not found!")
 	end
 end
