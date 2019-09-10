@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :password_digest
       t.integer :role, default: 0
       t.string :registered
+      t.references :restaurant, foreign_key: true
 
       t.timestamps
     end

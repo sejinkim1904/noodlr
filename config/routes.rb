@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get '/register', to: 'registration#new', as: :send_registration
+  get '/verification/:id', to: 'item_verification#new', as: :send_item_verification
   get '/dashboard', to: 'users#show', as: :dashboard
 
   get '/signup', to: 'users#new', as: :new_user

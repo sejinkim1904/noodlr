@@ -10,7 +10,7 @@ class Default::ItemsController < Default::BaseController
     if item.save && review.save
       session[:item_id] = review.id
 			flash[:notice] = 'Item has been suggested to restaurant owner for approval.'
-			redirect_to restaurant_path(params[:restaurant_id])
+      redirect_to send_item_verification_path(params[:restaurant_id])
     else
       flash[:error] = 'Item could not be saved.'
       redirect_to new_default_restaurant_item_path(params[:restaurant_id])
