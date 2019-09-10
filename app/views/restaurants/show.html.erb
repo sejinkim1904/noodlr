@@ -26,7 +26,6 @@
 
 </div>
 
-
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>
 
@@ -37,14 +36,14 @@
     <section class='item' id='<%= item.name %>'>
       <p><%= link_to item.name, item_path(item) %></p>
       <p>Average Rating: <%= item.average_rating.round(1) %></p>
-
       <% if current_user&.default? && current_user.registered == 'true' && current_user.reviewable?(item.id) %>
         <%= link_to "Write a Review", new_default_item_review_path(item) %>
       <% end %>
     </section>
   <% end %>
+  
 </section>
-
-<% if current_user&.default? && current_user.registered == 'true' %>
-  <%= link_to "Review a New Item", new_default_restaurant_item_path(@restaurant) %>
-<% end %>
+  <% if current_user&.default? && current_user.registered == 'true' %>
+    <%= link_to "Review a New Item", new_default_restaurant_item_path(@restaurant) %>
+  <% end %>
+</section>

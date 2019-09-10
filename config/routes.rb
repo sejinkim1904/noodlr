@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/verification/:id', to: 'item_verification#new', as: :send_item_verification
   get '/dashboard', to: 'users#show', as: :dashboard
 
-  get '/signup', to: 'users#new', as: :new_user
+  get '/signup', to: 'emails#new', as: :new_email
   get '/login', to: 'sessions#new', as: :login
   post '/login', to: 'sessions#create', as: :logged_in
   get '/logout', to: 'sessions#destroy', as: :logout
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:create]
   resources :restaurants
-
+  resources :emails, only: :create
   resources :items, only: [:show]
 
   resources :restaurants, only: [:show]
