@@ -4,7 +4,7 @@ describe YelpService do
   context 'instance methods' do
     it "returns restaurant data" do
       json_response = File.open("./fixtures/restaurants.json")
-      stub_request(:get, "https://api.yelp.com/v3/businesses/search?term=ramen&location=Denver, CO").
+      stub_request(:get, "https://api.yelp.com/v3/businesses/search?term=ramen&location=Denver, CO&limit=&offset=").
         to_return(status: 200, body: json_response)
       restaurants = subject.restaurants("ramen", "Denver, CO")
 

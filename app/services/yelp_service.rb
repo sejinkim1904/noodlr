@@ -1,5 +1,5 @@
 class YelpService
-  def restaurants(term, location, limit, offset = nil)
+  def restaurants(term, location, limit = nil, offset = nil)
     get_json("/v3/businesses/search?term=#{term}&location=#{location}&limit=#{limit}&offset=#{offset}")
   end
 
