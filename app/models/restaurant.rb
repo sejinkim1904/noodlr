@@ -11,4 +11,9 @@ class Restaurant < ApplicationRecord
 
   validates :yelp_id, presence: true, uniqueness: true
   has_many :items
+  has_many :users
+
+  def num_pending
+    items.where(items: {status: 'pending'}).count
+  end
 end
