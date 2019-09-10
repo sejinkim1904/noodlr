@@ -2,18 +2,10 @@
   <main>
 <h1>Register</h1>
   <section>
-    <%= form_for @user do |f| %>
+    <%= form_for @email do |f| %>
       <div >
         <%= f.label :email %>
         <%= f.email_field :email, class: "block col-12 field" %>
-      </div>
-      <div >
-        <%= f.label :first_name %>
-        <%= f.text_field :first_name, class: "block col-12 field" %>
-      </div>
-      <div>
-        <%= f.label :last_name %>
-        <%= f.text_field :last_name, class: "block col-12 field" %>
       </div>
       <div>
         <%= f.label :password %>
