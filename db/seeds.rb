@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-default = User.create!(email: 'default@user.com', first_name: 'default', last_name: 'user', password: 'default', role: 0, registered: 'default')
-User.create!(email: 'admin@user.com', first_name: 'admin', last_name: 'user', password: 'admin', role: 0, registered: 'admin')
-User.create!(email: 'restaurant@user.com', first_name: 'restaurant', last_name: 'user', password: 'restaurant', role: 0, registered: 'restaurant')
+# default = User.create!(email: 'default@user.com', first_name: 'default', last_name: 'user', password: 'default', role: 0, registered: 'default')
+# User.create!(email: 'admin@user.com', first_name: 'admin', last_name: 'user', password: 'admin', role: 0, registered: 'admin')
+# User.create!(email: 'restaurant@user.com', first_name: 'restaurant', last_name: 'user', password: 'restaurant', role: 0, registered: 'restaurant')
 
 # tokio = Restaurant.create!(name: 'Tokio', latitude: 39.7586035, longitude: -104.9974398)
 # tokio.items.create!(name: "Tonkotsu", price: 1400, category: "ramen", image: "https://s3-media2.fl.yelpcdn.com/bphoto/eMmvwCMQtOUs7GxccJu4zA/o.jpg", status: 'verified')
