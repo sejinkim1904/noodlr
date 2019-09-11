@@ -82,6 +82,35 @@ RSpec.configure do |config|
       example.run
     end
   end
+
+  config.before(:each) do
+    stub_request(:get, "https://nominatim.openstreetmap.org/reverse?accept-language=en&addressdetails=1&format=json&lat=39.7148252&lon=-104.9817735").
+        with(
+          headers: {
+       	    'Accept'=>'*/*',
+       	    'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+       	    'User-Agent'=>'Ruby'
+          }).
+            to_return(status: 200, body: "", headers: {})
+
+    stub_request(:get, "https://nominatim.openstreetmap.org/reverse?accept-language=en&addressdetails=1&format=json&lat=39.7148252&lon=-131.681037138249").
+        with(
+          headers: {
+       	    'Accept'=>'*/*',
+       	    'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+       	    'User-Agent'=>'Ruby'
+          }).
+            to_return(status: 200, body: "", headers: {})
+
+    stub_request(:get, "http://ipinfo.io/68.64.216.134/geo").
+        with(
+          headers: {
+       	    'Accept'=>'*/*',
+       	    'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+       	    'User-Agent'=>'Ruby'
+          }).
+            to_return(status: 200, body: "", headers: {})
+  end
 end
 
 Shoulda::Matchers.configure do |config|

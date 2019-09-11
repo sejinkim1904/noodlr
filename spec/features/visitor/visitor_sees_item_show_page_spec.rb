@@ -3,9 +3,10 @@ require 'rails_helper'
 describe 'As a visitor' do
   describe "When I visit an 'items/:id'" do
     before(:each) do
-      restaurant = create(:restaurant)
+      restaurant = create(:restaurant, name: 'Uncle', latitude: 39.7148252, longitude: -104.9817735)
       @item = create(:item, restaurant_id: restaurant.id, status: 'verified')
     end
+
 
     it "I see the item with that id including the item's\n
     -name\n

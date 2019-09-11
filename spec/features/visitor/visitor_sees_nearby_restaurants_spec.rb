@@ -17,9 +17,9 @@ describe 'As a visitor' do
           }
         ]
       )
-      @uncle = Restaurant.create!(name: 'Uncle', latitude: 39.7148252, longitude: -104.9817735)
-      @ototo = Restaurant.create!(name: 'OTOTO', latitude: 39.6892651, longitude: -104.980706)
-      @nowhere = Restaurant.create!(name: 'Nowhere Ramen', latitude: 29.6892651, longitude: -104.980706)
+      @uncle = create(:restaurant, name: 'Uncle', latitude: 39.7148252, longitude: -104.9817735)
+      @ototo = create(:restaurant, name: 'OTOTO', latitude: 39.6892651, longitude: -104.980706)
+      @nowhere = create(:restaurant, name: 'Nowhere Ramen', latitude: 29.6892651, longitude: -104.980706)
     end
     it "only restaurants nearby are returned to me" do
       visit root_path
