@@ -4,6 +4,8 @@ describe 'Restaurant show page' do
   describe "When I visit" do
     before :each do
       @restaurant = create(:restaurant)
+      owner = @restaurant.users.create!(role: 'restaurant', registered: 'true')
+      owner.emails.create!(email: 'owner@owner.com', password_digest: 'abc123')
       @ramen = @restaurant.items.create!(name: "Tonkotsu", price: 14.00, category: "ramen", image: "https://s3-media2.fl.yelpcdn.com/bphoto/eMmvwCMQtOUs7GxccJu4zA/o.jpg", status: 'verified')
       @user = User.create!(registered: 'true')
       email = @user.emails.create!(email: 'r@r.r', password: 'password')
