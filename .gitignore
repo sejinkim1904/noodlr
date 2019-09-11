@@ -33,5 +33,8 @@
 # Ignore application configuration
 /config/application.yml
 
+# Ignore skylight configuration
+/config/skylight.yml
+
 # For MacOS
 .DS_Store
