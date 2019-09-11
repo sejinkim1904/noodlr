@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :restaurant do
-    latitude { Faker::Address.latitude }
-    longitude { Faker::Address.longitude }
+    latitude { 39.7148252 }
+    longitude { -131.681037138249 }
     name  { Faker::Food.dish }
     rating { rand(1..5) }
     address_1 { Faker::Address.street_address }
