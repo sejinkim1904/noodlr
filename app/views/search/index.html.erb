@@ -2,9 +2,19 @@
 
 <% facade.results.each do |result| %>
   <section id="item-<%= result.id %>">
-    <%= image_tag(result.image) %> <br>
-    <%= result.name %>
-    <p>Price: <%= number_to_currency(result.price) %></p>
-    <p>Available at: <%= link_to result.restaurant.name, restaurant_path(result.restaurant) %></p>
+    <div class="card mb-3" style="max-width: 600px;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <%= link_to image_tag(result.image), result.image %>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title"><%= result.name %></h5>
+            <p class="card-text">Price: <%= number_to_currency(result.price) %></p>
+            <p class="card-text"><small class="text-muted">Available at: <%= link_to result.restaurant.name, restaurant_path(result.restaurant) %></small></p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 <% end %>
