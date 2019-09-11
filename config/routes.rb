@@ -25,6 +25,12 @@ Rails.application.routes.draw do
 
   resources :search, only: [:index]
 
+  resources :items do
+    collection do
+      get :autocomplete
+    end
+  end
+
   namespace :default do
     resources :items do
       resources :reviews, only: [:new, :create]

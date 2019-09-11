@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+  searchkick word_start: [:name]
   belongs_to :restaurant
   has_many :reviews
   accepts_nested_attributes_for :reviews
@@ -15,3 +16,5 @@ class Item < ApplicationRecord
     rating.nil? ? 0 : rating
   end
 end
+
+Item.reindex

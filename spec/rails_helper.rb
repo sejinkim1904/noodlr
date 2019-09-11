@@ -1,6 +1,11 @@
 require 'simplecov'
 SimpleCov.start "rails"
 require 'webmock/rspec'
+WebMock.disable_net_connect!(allow_localhost: true)
+require 'elasticsearch/extensions/test/cluster'
+# ENV["TEST_CLUSTER_NODES"] = "1"
+
+
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
@@ -63,6 +68,20 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
   config.include FactoryBot::Syntax::Methods
+
+  config.before(:suite) do
+    # reindex models
+    Item.reindex
+
+    # and disable callbacks
+    Searchkick.disable_callbacks
+  end
+
+  config.around(:each, search: true) do |example|
+    Searchkick.callbacks(true) do
+      example.run
+    end
+  end
 end
 
 Shoulda::Matchers.configure do |config|

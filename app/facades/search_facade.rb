@@ -10,6 +10,6 @@ class SearchFacade
   end
 
   def results
-    Item.where("name ~* ?", @query)
+    Item.search @query, fields: [:name], match: :word_start
   end
 end
