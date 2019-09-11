@@ -63,6 +63,7 @@ group :development, :test do
   gem 'elasticsearch-extensions'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'database_cleaner'
 end
 
 group :development do
