@@ -102,14 +102,30 @@ RSpec.configure do |config|
           }).
             to_return(status: 200, body: "", headers: {})
 
-    stub_request(:get, "http://ipinfo.io/68.64.216.134/geo").
-        with(
-          headers: {
-       	    'Accept'=>'*/*',
-       	    'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-       	    'User-Agent'=>'Ruby'
-          }).
-            to_return(status: 200, body: "", headers: {})
+    Geocoder.configure(lookup: :test, ip_lookup: :test)
+
+    Geocoder::Lookup::Test.set_default_stub(
+      [
+        {
+          'coordinates'  => [39.7063483,-104.9783864],
+          'address'      => 'Denver, CO, USA',
+          'state'        => 'Colorado',
+          'state_code'   => 'CO',
+          'country'      => 'United States',
+          'country_code' => 'US'
+        }
+      ]
+    )
+    # json_response = File.open("./fixtures/house_members.json")
+    #
+    # stub_request(:get, "http://ipinfo.io/68.64.216.134/geo").
+    #     with(
+    #       headers: {
+    #    	    'Accept'=>'*/*',
+    #    	    'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+    #    	    'User-Agent'=>'Ruby'
+    #       }).
+    #         to_return(status: 200, body: json_response, headers: {})
   end
 end
 

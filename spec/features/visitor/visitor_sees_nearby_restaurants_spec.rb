@@ -3,20 +3,6 @@ require 'rails_helper'
 describe 'As a visitor' do
   describe "When I visit the root page" do
     before(:all) do
-      Geocoder.configure(lookup: :test, ip_lookup: :test)
-
-      Geocoder::Lookup::Test.set_default_stub(
-        [
-          {
-            'coordinates'  => [39.7063483,-104.9783864],
-            'address'      => 'Denver, CO, USA',
-            'state'        => 'Colorado',
-            'state_code'   => 'CO',
-            'country'      => 'United States',
-            'country_code' => 'US'
-          }
-        ]
-      )
       @uncle = create(:restaurant, name: 'Uncle', latitude: 39.7148252, longitude: -104.9817735)
       @ototo = create(:restaurant, name: 'OTOTO', latitude: 39.6892651, longitude: -104.980706)
       @nowhere = create(:restaurant, name: 'Nowhere Ramen', latitude: 29.6892651, longitude: -104.980706)
