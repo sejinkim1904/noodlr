@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Item do
+describe Item, search: true do
   describe 'validations' do
     it { should validate_presence_of :name }
     it { should validate_presence_of :price }
@@ -25,6 +25,11 @@ describe Item do
 
     it 'average rating' do
       expect(@ramen.average_rating).to eq(4)
+    end
+
+    it "search" do
+      Item.search_index.refresh
+      assert_equal ["Tonkotsu"], Item.search("tonkotsu").map(&:name)
     end
   end
 end

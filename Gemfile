@@ -26,7 +26,14 @@ gem 'faraday'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
-gem 'faraday'
+gem 'searchkick'
+gem 'autosuggest'
+gem 'jquery-rails'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+# gem 'rails-jquery-autocomplete'
+# gem 'jquery-ui-rails'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -48,6 +55,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'simplecov'
   gem 'webmock'
+  gem 'elasticsearch-extensions'
 end
 
 group :development do
