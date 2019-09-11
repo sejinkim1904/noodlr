@@ -11,6 +11,14 @@
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key="+ENV['GOOGLE_MAPS_API_KEY']+"&callback=initMap" %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= yield(:head_tags) %>
+    <style>
+      img {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        width: 150px;
+      }
+    </style>
   </head>
 
   <body>
