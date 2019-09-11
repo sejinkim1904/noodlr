@@ -25,6 +25,8 @@
 <% provide :head_tags do %>
   <script>
     var markers = [];
+    var lat = <%= @coordinates[0] %>;
+    var lng = <%= @coordinates[1] %>;
 
     <% @restaurants.each do |restaurant| %>
       var restaurant = ['<%= restaurant.name %>', <%= restaurant.latitude %>, <%= restaurant.longitude %>]
