@@ -58,6 +58,9 @@ namespace :ramen do
     mizu_izakaya = Restaurant.find_by(name: 'Mizu Izakaya')
     mizu_izakaya.items.create!(name: 'Miso', price: 15.00, category: 'ramen', image: 'https://s3-media4.fl.yelpcdn.com/bphoto/SArvq7e-mBM1ElNpKnecPA/o.jpg', status: 'verified')
 
+    owner = Restaurant.first.users.create!(role: 'restaurant', registered: 'true')
+    owner.emails.create!(email: 'owner@owner.com', password_digest: 'abc123')
+
     jake = User.create!(registered: 'true')
     sejin = User.create!(registered: 'true')
     andrew = User.create!(registered: 'true')
