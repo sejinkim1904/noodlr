@@ -1,5 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-    @restaurants = Restaurant.all
+    coordinates = location.coordinates
+    @restaurants = Restaurant.near(coordinates, 5)
   end
 end

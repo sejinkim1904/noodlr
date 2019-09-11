@@ -10,10 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_07_225259) do
+ActiveRecord::Schema.define(version: 2019_09_10_185822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "emails", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_emails_on_user_id"
+  end
+
+  create_table "facebooks", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_facebooks_on_user_id"
+  end
+
+  create_table "googles", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_googles_on_user_id"
+  end
 
   create_table "items", force: :cascade do |t|
     t.string "name"
@@ -41,6 +64,7 @@ ActiveRecord::Schema.define(version: 2019_09_07_225259) do
     t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "address"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -56,19 +80,18 @@ ActiveRecord::Schema.define(version: 2019_09_07_225259) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email"
-    t.string "first_name"
-    t.string "last_name"
-    t.string "password_digest"
     t.integer "role", default: 0
+    t.integer "auth_type", default: 0
     t.string "registered"
     t.bigint "restaurant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email"
     t.index ["restaurant_id"], name: "index_users_on_restaurant_id"
   end
 
+  add_foreign_key "emails", "users"
+  add_foreign_key "facebooks", "users"
+  add_foreign_key "googles", "users"
   add_foreign_key "items", "restaurants"
   add_foreign_key "reviews", "items"
   add_foreign_key "reviews", "users"

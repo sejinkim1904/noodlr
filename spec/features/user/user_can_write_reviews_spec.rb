@@ -9,11 +9,12 @@ describe 'Restaurant show page' do
 
     it "A registered user can review an item" do
       user = create(:user)
+      email = user.emails.create(email: "email", password: "password")
       user.update_attributes(registered: 'true')
       visit '/'
       click_on "Sign In"
-      fill_in 'session[email]', with: user.email
-      fill_in 'session[password]', with: user.password
+      fill_in 'session[email]', with: email.email
+      fill_in 'session[password]', with: email.password
       click_on 'Log In'
 
       visit restaurant_path(@restaurant)
@@ -47,10 +48,11 @@ describe 'Restaurant show page' do
 
     it 'unregistered user cannot leave a review' do
       user = create(:user)
+      email = user.emails.create(email: "email", password: "password")
       visit '/'
       click_on "Sign In"
-      fill_in 'session[email]', with: user.email
-      fill_in 'session[password]', with: user.password
+      fill_in 'session[email]', with: email.email
+      fill_in 'session[password]', with: email.password
       click_on 'Log In'
 
       visit new_default_item_review_path(@ramen)
@@ -61,10 +63,11 @@ describe 'Restaurant show page' do
     it "A registered user can suggest a new item to review" do
       user = create(:user)
       user.update_attributes(registered: 'true')
+      email = user.emails.create(email: "email", password: "password")
       visit '/'
       click_on "Sign In"
-      fill_in 'session[email]', with: user.email
-      fill_in 'session[password]', with: user.password
+      fill_in 'session[email]', with: email.email
+      fill_in 'session[password]', with: email.password
       click_on 'Log In'
 
       visit restaurant_path(@restaurant)

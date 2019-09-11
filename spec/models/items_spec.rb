@@ -16,7 +16,7 @@ describe Item, search: true do
 
   describe 'methods' do
     before :each do
-      @user = create(:user)
+      @user = User.create!(registered: 'true')
       @restaurant = create(:restaurant)
       @ramen = @restaurant.items.create!(name: "Tonkotsu", price: 14, category: "ramen", image: "https://s3-media2.fl.yelpcdn.com/bphoto/eMmvwCMQtOUs7GxccJu4zA/o.jpg", status: 'verified')
       @ramen.reviews.create!(user: @user, title: 'So tasteful!', body: 'This is the tastiest Tonkotsu in town', rating: 5)
