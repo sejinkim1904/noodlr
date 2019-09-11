@@ -1,10 +1,9 @@
-<% provide :head_tags do %>
-  <script>
-    document.addEventListener("DOMContentLoaded", function(){
-        initMap(<%=@restaurant.latitude%>, <%=@restaurant.longitude%>)
-    });
-  </script>
-<% end %>
+<%= javascript_include_tag "restaurants" %>
+<script>
+  document.addEventListener("DOMContentLoaded", function(){
+      initMap(<%=@restaurant.latitude%>, <%=@restaurant.longitude%>)
+  });
+</script>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -41,7 +40,7 @@
       <% end %>
     </section>
   <% end %>
-  
+
 </section>
   <% if current_user&.default? && current_user.registered == 'true' %>
     <%= link_to "Review a New Item", new_default_restaurant_item_path(@restaurant) %>
