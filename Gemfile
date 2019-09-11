@@ -61,6 +61,8 @@ group :development, :test do
   gem 'webmock'
   gem 'skylight'
   gem 'elasticsearch-extensions'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
 end
 
 group :development do
