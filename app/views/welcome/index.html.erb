@@ -1,6 +1,32 @@
+<div class="row justify-content-center" style="margin-top:30px;">
+  <div class="card-group">
+    <% @items_by_rating.each do |item| %>
+    <section id="item-<%= item.id %>">
+      <div class="card" style="align:center;">
+        <div class="card-img-top" style="float:inherit;">
+          <%= link_to image_tag(item.image, style: "height:230px;"), item.image  %>
+        </div>
+        <div class="card-body" style="text-align:center;">
+          <h5 class="card-title"><%= item.name %></h5>
+          <p class="card-text">Price: <%= number_to_currency(item.price) %></p>
+          <p class="card-text">Average Rating: <%= item.average_rating %></p>
+        </div>
+        <div class="card-footer" style="text-align:center;">
+          <p class="card-text"><small class="text-muted"><%= link_to item.restaurant.name, restaurant_path(item.restaurant) %></small></p>
+        </div>
+      </div>
+      <br>
+    </section>
+    <% end %>
+  </div>
+</div>
+
+
 <% provide :head_tags do %>
   <script>
     var markers = [];
+    var lat = <%= @coordinates[0] %>;
+    var lng = <%= @coordinates[1] %>;
 
     <% @restaurants.each do |restaurant| %>
       var restaurant = ['<%= restaurant.name %>', <%= restaurant.latitude %>, <%= restaurant.longitude %>]

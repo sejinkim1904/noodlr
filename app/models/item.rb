@@ -15,6 +15,14 @@ class Item < ApplicationRecord
     rating = reviews.average(:rating)
     rating.nil? ? 0 : rating
   end
+
+  def self.by_avg_rating
+    select("items.*, AVG(reviews.rating) AS average_rating")
+      .joins(:reviews)
+      .group(:id)
+      .order("average_rating DESC")
+      .limit(5)
+  end
 end
 
 Item.reindex
