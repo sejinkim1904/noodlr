@@ -7,40 +7,28 @@ function initMap() {
   });
   infoWindow = new google.maps.InfoWindow;
 
-  if (navigator.geolocation) {
+  if(navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-
-      map.setCenter(pos);
-      for( i = 0; i < markers.length; i++) {
-        var position = new google.maps.LatLng(markers[i][1], markers[i][2])
-        marker = new google.maps.Marker({
-          position: position,
-          map: map,
-          title: markers[i][0]
-        });
-        google.maps.event.addListener(marker, 'click', (function(marker, i) {
-          return function () {
-            infoWindow.setContent(markers[i][0])
-            infoWindow.open(map, marker);
-          }
-        })(marker, i));
-      }
-    }, function() {
-      handleLocationError(true, infoWindow, map.getCenter());
-    });
-  } else {
-    handleLocationError(false, infoWindow, map.getCenter());
+      user_location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      map.setCenter(user_location);
+    }, deniedGeolocation);
+   }
+  function deniedGeolocation() {
+    user_location = new google.maps.LatLng(lat, lng);
+    map.setCenter(user_location);
   }
-}
-
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-  infoWindow.setPosition(pos);
-  infoWindow.setContent(browserHasGeolocation ?
-                        'Error: Geolocation failed.' :
-                        'Error: Your browser does not support geolocation.');
-  infoWindow.open(map);
+  for( i = 0; i < markers.length; i++) {
+    var position = new google.maps.LatLng(markers[i][1], markers[i][2])
+    marker = new google.maps.Marker({
+      position: position,
+      map: map,
+      title: markers[i][0]
+    });
+    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+      return function () {
+        infoWindow.setContent(markers[i][0])
+        infoWindow.open(map, marker);
+      }
+    })(marker, i));
+  }
 }
