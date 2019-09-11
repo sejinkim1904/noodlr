@@ -6,12 +6,13 @@ class Default::ItemsController < Default::BaseController
 
   def create
     item = Item.create(item_params.merge(status: 'pending').merge(restaurant_id: params[:restaurant_id]))
-    review = Review.create(review_params.merge(user: current_user).merge(item: item))
-    if item.save && review.save
+    review = Review.new(review_params.merge(user: current_user).merge(item: item))
+    if review.save
       session[:item_id] = review.id
 			flash[:notice] = 'Item has been suggested to restaurant owner for approval.'
       redirect_to send_item_verification_path(params[:restaurant_id])
     else
+      item.destroy
       flash[:error] = 'Item could not be saved.'
       redirect_to new_default_restaurant_item_path(params[:restaurant_id])
     end
