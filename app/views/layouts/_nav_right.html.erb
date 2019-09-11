@@ -1,4 +1,4 @@
 <%= form_tag '/search', class: "form-inline", method: :get do %>
   <%= text_field_tag :query, nil, class: 'form-control typeahead', placeholder: "Dish Name (eg. Miso)" %>
-  <%= submit_tag 'Search', class: "btn btn-outline-success my-2 my-sm-0" %>
+  <%= submit_tag 'Search', class: "btn btn-outline-light", style: "margin-left:5px" %>
 <% end %>
