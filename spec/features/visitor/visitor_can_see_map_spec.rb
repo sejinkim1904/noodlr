@@ -1,4 +1,5 @@
 require 'rails_helper'
+WebMock.allow_net_connect!
 
 describe 'Welcome Page' do
   describe 'As a visitor', :js do
