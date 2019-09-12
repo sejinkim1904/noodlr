@@ -9,8 +9,6 @@ describe 'Welcome Page' do
 
       expect(page).to have_css('div#map')
       expect(page).to have_content(restaurant.name)
-      expect(page).to have_content(restaurant.latitude)
-      expect(page).to have_content(restaurant.longitude)
     end
   end
 end
