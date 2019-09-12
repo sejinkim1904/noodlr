@@ -1,6 +1,7 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 var map, infoWindow;
+
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 14
@@ -37,3 +38,11 @@ function initMap() {
     })(marker, i));
   }
 }
+
+function popout() {
+  $('.pop').on('click', function(event) {
+    event.preventDefault()
+		$('.imagepreview').attr('src', $(this).find('img').attr('src'));
+		$('#imagemodal').modal('show');
+	});
+};
