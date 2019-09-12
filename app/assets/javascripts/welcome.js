@@ -1,6 +1,7 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 var map, infoWindow;
+
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 14
