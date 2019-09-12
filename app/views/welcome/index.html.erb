@@ -1,5 +1,8 @@
 <%= javascript_include_tag "welcome" %>
 <script>
+  document.addEventListener("DOMContentLoaded", function(){
+    initMap()
+  });
   var markers = [];
   var lat = <%= @coordinates[0] %>;
   var lng = <%= @coordinates[1] %>;

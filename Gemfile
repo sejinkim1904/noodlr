@@ -59,7 +59,6 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'simplecov'
   gem 'webmock'
-  gem 'skylight'
   gem 'elasticsearch-extensions'
   gem 'selenium-webdriver'
   gem 'webdrivers'
