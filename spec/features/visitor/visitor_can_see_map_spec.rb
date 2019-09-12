@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe 'Welcome Page' do
-  describe 'As a visitor' do
-    it 'I see the embedded Google Map' do
+  describe 'As a visitor', :js do
+    it 'I see the embedded Google Map for a restaurant' do
       restaurant = FactoryBot.create(:restaurant)
       visit restaurant_path(restaurant)
 

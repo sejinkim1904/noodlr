@@ -1,11 +1,6 @@
 require 'simplecov'
 SimpleCov.start "rails"
-require 'webmock/rspec'
-WebMock.disable_net_connect!(allow_localhost: true)
 require 'elasticsearch/extensions/test/cluster'
-# ENV["TEST_CLUSTER_NODES"] = "1"
-
-
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
@@ -15,6 +10,15 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
+Capybara.register_driver :selenium do |app|
+  Capybara::Selenium::Driver.new(app, browser: :chrome)
+end
+
+Capybara.javascript_driver = :selenium_chrome
+
+Capybara.configure do |config|
+  config.default_max_wait_time = 5
+end
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -84,24 +88,6 @@ RSpec.configure do |config|
   end
 
   config.before(:each) do
-    stub_request(:get, "https://nominatim.openstreetmap.org/reverse?accept-language=en&addressdetails=1&format=json&lat=39.7148252&lon=-104.9817735").
-        with(
-          headers: {
-       	    'Accept'=>'*/*',
-       	    'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-       	    'User-Agent'=>'Ruby'
-          }).
-            to_return(status: 200, body: "", headers: {})
-
-    stub_request(:get, "https://nominatim.openstreetmap.org/reverse?accept-language=en&addressdetails=1&format=json&lat=39.7148252&lon=-131.681037138249").
-        with(
-          headers: {
-       	    'Accept'=>'*/*',
-       	    'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-       	    'User-Agent'=>'Ruby'
-          }).
-            to_return(status: 200, body: "", headers: {})
-
     Geocoder.configure(lookup: :test, ip_lookup: :test)
 
     Geocoder::Lookup::Test.set_default_stub(
