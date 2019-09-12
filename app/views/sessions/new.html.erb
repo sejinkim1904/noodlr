@@ -1,7 +1,7 @@
 <div class="row justify-content-center" style="margin-top:30px;">
   <div class="col-sm-5">
     <div class="card text-center" style="width: 20rem;">
-      <div class="card-header">
+      <div class="card-header" >
         Login or Sign Up
       </div>
       <div class="card-body">
@@ -15,11 +15,11 @@
                 <%= f.password_field :password, class: 'form-control'  %>
                 <br>
                 <%= f.submit 'Log In', class: "btn" %>
-                <%= button_to 'Sign Up', new_email_path, class: "btn", method: :get %>
             <% end %>
+            <%= button_to 'Sign Up', new_email_path, class: "btn", method: :get %>
           </section>
       </div>
-      <div class="card-footer text-muted">
+      <div class="card-footer text-muted" s>
         <p>Sign in With:</p>
         <%= button_to 'Facebook', facebook_login_path, class: "btn", method: :get %>
         <%= button_to 'Gmail', gmail_login_path, class: "btn", method: :get %>
