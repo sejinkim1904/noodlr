@@ -16,6 +16,10 @@
     <%= yield(:head_tags) %>
 
     <style>
+      a.nav-link {
+        font-size:15px;
+        font-weight: bold;
+      }
       body {
         background-color: #a1a1a1;
       }
@@ -36,6 +40,13 @@
         margin: 0 auto; /* Added */
         float: none; /* Added */
         margin-bottom: 10px; /* Added */
+      }
+
+      .btn {
+        display: inline;
+        color: white;
+        background-color:#5900ff;
+        margin: 5px;
       }
     </style>
   </head>
