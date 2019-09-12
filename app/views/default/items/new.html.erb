@@ -1,43 +1,47 @@
-<h1>Review a New Item</h1>
+<section class='col-sm-5'>
+  <h1>Review a New Item</h1>
 
-<%= form_for [:default, @restaurant, @item] do |f| %>
+  <%= form_for [:default, @restaurant, @item] do |f| %>
 
-  <div>
-    <%= f.label :name %>
-    <%= f.text_field :name, class: "block col-12 field" %>
-  </div>
+    <section>
+      <%= f.label :name %>
+      <%= f.text_field :name, size: '40%', style: "margin: 5px 1px" %>
+    </section>
 
-  <div>
-    <%= f.label :price %>
-    <%= f.number_field :price, class: "block col-12 field" %>
-  </div>
+    <section>
+      <%= f.label :price %>
+      <%= f.number_field :price, style: "margin: 5px 1px" %>
+    </section>
 
-  <div>
-    <%= f.label :category %>
-    <%= f.text_field :category, class: "block col-12 field" %>
-  </div>
+    <section>
+      <%= f.label :category %>
+      <%= f.text_field :category, size: '40%', style: "margin: 5px 1px" %>
+    </section>
 
-  <div>
-    <%= f.label :image %>
-    <%= f.text_field :image, class: "block col-12 field" %>
-  </div>
+    <section>
+      <%= f.label :image %>
+      <%= f.text_field :image, size: '40%', style: "margin: 5px 1px" %>
+    </section>
 
-  <%= f.fields_for :review do |g| %>
-    <div>
-      <%= g.label :title %>
-      <%= g.text_field :title, class: "block col-12 field" %>
-    </div>
+    <%= f.fields_for :review do |g| %>
+      <section>
+        <%= g.label :title %>
+        <%= g.text_field :title, size: '40%', style: "margin: 5px 1px" %>
+      </section>
 
-    <div>
-      <%= g.label :body %>
-      <%= g.text_field :body, class: "block col-12 field" %>
-    </div>
+      <section>
+        <%= g.label :body, style: 'float: top' %>
+        <%= g.text_area :body, size: '39%', style: "margin: 0px 0px" %>
+      </section>
 
-    <div>
-      <%= g.label :rating %>
-      <%= g.number_field :rating, class: "block col-12 field" %>
-    </div>
+      <section>
+        <%= g.label :rating %>
+        <%= g.collection_select :rating, (1..5), :to_s, :to_s, include_blank: true %>
+      </section>
+    <% end %>
+
+    <section class='center' style="margin: 5px 0px">
+      <%= f.submit 'Submit', class: "btn" %>
+    </section>
   <% end %>
-
-  <%= f.submit 'Submit', class: "mt2 btn btn-primary mb1 bg-teal" %>
-<% end %>
+</section>

@@ -1,20 +1,24 @@
-<h1>Review for <%= @item.name %></h1>
+<section class='col-sm-5'>
+  <h1>Review for <%= @item.name %></h1>
 
-<%= form_for [:default, @item, Review.new] do |f| %>
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title, class: "block col-12 field" %>
-  </div>
+  <%= form_for [:default, @item, Review.new] do |f| %>
+    <section>
+      <%= f.label :title %>
+      <%= f.text_field :title, size: '40%', style: "margin: 5px 1px" %>
+    </section>
 
-  <div>
-    <%= f.label :body %>
-    <%= f.text_field :body, class: "block col-12 field" %>
-  </div>
+    <section>
+      <%= f.label :body %>
+      <%= f.text_area :body, size: '39%', style: "margin: 0px 0px" %>
+    </section>
 
-  <div>
-    <%= f.label :rating %>
-    <%= f.text_field :rating, class: "block col-12 field" %>
-  </div>
+    <section>
+      <%= f.label :rating %>
+      <%= f.collection_select :rating, (1..5), :to_s, :to_s, include_blank: true %>
+    </section>
 
-  <%= f.submit 'Submit', class: "mt2 btn btn-primary mb1 bg-teal" %>
-<% end %>
+    <section class='center' style="margin: 5px 0px">
+      <%= f.submit 'Submit', class: "btn" %>
+    </section>
+  <% end %>
+</section>
