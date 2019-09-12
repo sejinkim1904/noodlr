@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_10_202125) do
+ActiveRecord::Schema.define(version: 2019_09_12_200003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,16 +26,32 @@ ActiveRecord::Schema.define(version: 2019_09_10_202125) do
 
   create_table "facebooks", force: :cascade do |t|
     t.bigint "user_id"
+    t.string "provider"
+    t.string "uid"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_facebooks_on_user_id"
   end
 
   create_table "googles", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.string "name"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_googles_on_user_id"
+  end
+
+  create_table "instagrams", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "provider"
+    t.string "uid"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_instagrams_on_user_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -92,6 +108,7 @@ ActiveRecord::Schema.define(version: 2019_09_10_202125) do
   add_foreign_key "emails", "users"
   add_foreign_key "facebooks", "users"
   add_foreign_key "googles", "users"
+  add_foreign_key "instagrams", "users"
   add_foreign_key "items", "restaurants"
   add_foreign_key "reviews", "items"
   add_foreign_key "reviews", "users"
