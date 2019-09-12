@@ -85,7 +85,6 @@ describe 'Restaurant show page' do
       expect(page).to have_content("Average Rating: 0.0")
 
       click_on "Review a New Item"
-
       expect(page).to have_content("Review a New Item")
       expect(current_path).to eq(new_default_restaurant_item_path(@restaurant))
 

@@ -43,7 +43,7 @@
   <h2 style="text-align:center;">Dishes</h2>
   <div class="row justify-content-center">
     <% if current_user&.default? && current_user.registered == 'true' %>
-      <%= button_to "Review a New Item", new_default_restaurant_item_path(@restaurant), class: "btn btn-review" %>
+      <%= button_to "Review a New Item", new_default_restaurant_item_path(@restaurant), method: :get, class: "btn btn-review" %>
     <% end %>
   </div>
   <div class="row justify-content-center" style="margin-top:30px;">
