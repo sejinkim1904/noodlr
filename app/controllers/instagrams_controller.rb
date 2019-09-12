@@ -6,9 +6,9 @@ class InstagramsController < ApplicationController
       flash[:notice] = "Signed in with Instagram!"
       redirect_to root_path
     else
-      new_user = User.create(role: :default, auth_type: :instagram, registered: true)
-      new_instagram_user = Instagram.create(uid: request.env["omniauth.auth"][:uid], name: request.env["omniauth.auth"][:info][:name], user: new_user)
-      session[:user_id] = new_instagram_user.user_id
+      new_user = User.create(auth_type: :instagram, registered: 'true')
+      new_user.instagrams.create(uid: request.env["omniauth.auth"][:uid], name: request.env["omniauth.auth"][:info][:name])
+      session[:user_id] = new_user.id
       flash[:notice] = "Signed in with Instagram!"
       redirect_to root_path
     end
