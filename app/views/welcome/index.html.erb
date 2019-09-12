@@ -23,7 +23,7 @@
         <div class="card-body" style="text-align:center;">
           <h5 class="card-title"><%= link_to item.name, item_path(item) %></h5>
           <p class="card-text">Price: <%= number_to_currency(item.price) %></p>
-          <p class="card-text">Average Rating: <%= item.average_rating %></p>
+          <p class="card-text">Average Rating: <%= item.average_rating.round(1) %></p>
         </div>
         <div class="card-footer" style="text-align:center;">
           <p class="card-text"><small class="text-muted"><%= link_to item.restaurant.name, restaurant_path(item.restaurant) %></small></p>
