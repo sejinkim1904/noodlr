@@ -12,9 +12,10 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy', as: :logout
   get '/activation/:code', to: 'activation#create', as: :activation
 
-  get '/facebook/login', to: 'facebook/sessions#new', as: :facebook_login
-  get '/gmail/login', to: 'gmail/sessions#new', as: :gmail_login
-  get '/instagram/login', to: 'instagram/sessions#new', as: :instagram_login
+  get '/auth/facebook/callback', to: 'facebooks#create'
+  get '/auth/google_oauth2/callback', to: 'googles#create'
+  get '/auth/instagram/callback', to: 'instagrams#create'
+
 
   resources :users, only: [:create]
   resources :restaurants
