@@ -22,6 +22,6 @@
 
 <p>Sign in with:</p>
 
-<%= button_to 'Facebook', facebook_login_path, method: :get %>
-<%= button_to 'Gmail', gmail_login_path, method: :get %>
-<%= button_to 'Instagram', instagram_login_path, method: :get %>
+<%= button_to 'Facebook', '/auth/facebook' %>
+<%= button_to 'Google', '/auth/google_oauth2' %>
+<%= button_to 'Instagram', '/auth/instagram' %>
