@@ -9,7 +9,7 @@
               <%= link_to image_tag(result.image, style: "height:240px;"), result.image  %>
             </div>
             <div class="card-body" style="text-align:center;">
-              <h5 class="card-title"><%= result.name %></h5>
+              <h5 class="card-title"><%= link_to result.name, item_path(result) %></h5>
               <p class="card-text">Price: <%= number_to_currency(result.price) %></p>
               <p class="card-text">Average Rating: <%= result.average_rating %></p>
             </div>
