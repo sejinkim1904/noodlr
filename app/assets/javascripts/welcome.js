@@ -1,6 +1,7 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 var map, infoWindow;
+
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 14
@@ -24,9 +25,14 @@ function initMap() {
       map: map,
       title: markers[i][0]
     });
-    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+    let address = encodeURIComponent(markers[i][3]);
+    let contentString =
+      '<h5>' + markers[i][0] + '</h5>' +
+      '<p>' + markers[i][3] + '</p>' +
+      '<a href="https://www.google.com/maps/dir/?api=1&destination=' + address + '" target="_blank" rel="noopener" style="cursor: pointer; color: rgb(66, 127, 237); text-decoration: none;">Directions</a></div>';
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
       return function () {
-        infoWindow.setContent(markers[i][0])
+        infoWindow.setContent(contentString)
         infoWindow.open(map, marker);
       }
     })(marker, i));

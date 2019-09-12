@@ -1,29 +1,60 @@
-<% provide :head_tags do %>
-  <script>
-    var markers = [];
-    var lat = <%= @coordinates[0] %>;
-    var lng = <%= @coordinates[1] %>;
+<%= javascript_include_tag "welcome" %>
+<script>
+  document.addEventListener("DOMContentLoaded", function(){
+    initMap()
+  });
+  var markers = [];
+  var lat = <%= @coordinates[0] %>;
+  var lng = <%= @coordinates[1] %>;
+  <% @restaurants.each do |restaurant| %>
+    var restaurant = ['<%= restaurant.name %>', <%= restaurant.latitude %>, <%= restaurant.longitude %>, '<%= restaurant.address_1 %>, <%= restaurant.city %>, <%= restaurant.state %> <%= restaurant.zip_code %>']
+    markers.push(restaurant)
+  <% end %>
+  document.addEventListener("DOMContentLoaded", function(){
+    popout()
+  });
+</script>
 
-    <% @restaurants.each do |restaurant| %>
-      var restaurant = ['<%= restaurant.name %>', <%= restaurant.latitude %>, <%= restaurant.longitude %>]
-      markers.push(restaurant)
+<div class="row justify-content-center" style="margin-top:30px;">
+  <div class="card-group">
+    <% @items_by_rating.each do |item| %>
+    <section id="item-<%= item.id %>">
+      <div class="card" style="align:center;">
+
+        <div class="card-img-top" style="float:inherit;">
+          <a href="#" class="pop">
+            <%= image_tag(item.image, style: "height:230px;") %>
+          </a>
+        </div>
+
+        <div class="card-body" style="text-align:center;">
+          <h5 class="card-title"><%= link_to item.name, item_path(item) %></h5>
+          <p class="card-text">Price: <%= number_to_currency(item.price) %></p>
+          <p class="card-text">Average Rating: <%= item.average_rating.round(1) %></p>
+        </div>
+
+        <div class="card-footer" style="text-align:center;">
+          <p class="card-text"><small class="text-muted"><%= link_to item.restaurant.name, restaurant_path(item.restaurant) %></small></p>
+        </div>
+
+      </div>
+      <br>
+    </section>
     <% end %>
+  </div>
+</div>
 
-    document.addEventListener("DOMContentLoaded", function(){
-        initMap()
-    });
-  </script>
-<% end %>
+<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+      	<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <img src="" class="imagepreview" style="width: 100%;" >
+      </div>
+    </div>
+  </div>
+</div>
 
 <div id="map">
 
 </div>
-
-<section id="nearby">
-  <h2>Nearby Restaurants</h2>
-  <ul>
-  <% @restaurants.each do |restaurant| %>
-    <li><%= restaurant.name %></li>
-  <% end %>
-</ul>
-</section>

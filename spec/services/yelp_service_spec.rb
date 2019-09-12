@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'webmock/rspec'
 
 describe YelpService do
   context 'instance methods' do

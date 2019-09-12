@@ -1,20 +1,23 @@
-<h1>Review for <%= @item.name %></h1>
-
-<%= form_for [:default, @item, Review.new] do |f| %>
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title, class: "block col-12 field" %>
+<div class="row justify-content-center" style="margin-top:30px;">
+  <div class="card text-center" style="width: 30rem;">
+    <div class="card-header">
+      <h3>Review for <%= @item.name %></h3>
+    </div>
+    <div class="card-body">
+      <p class="card-text">
+        <%= form_for [:default, @item, Review.new] do |f| %>
+          <%= f.label :title, class: "text-center" %>
+          <%= f.text_field :title, class: 'form-control' %>
+          <br>
+          <%= f.label :body, class: "text-center" %>
+          <%= f.text_area :body, class: 'form-control' %>
+          <br>
+          <%= f.label :rating, class: "text-center" %>
+          <select class="form-control form-control-lg"<%= f.collection_select :rating, (1..5), :to_s, :to_s, include_blank: true %>
+          <br>
+          <%= f.submit 'Submit', class: "btn" %>
+        <% end %>
+      </div>
+    </div>
   </div>
-
-  <div>
-    <%= f.label :body %>
-    <%= f.text_field :body, class: "block col-12 field" %>
-  </div>
-
-  <div>
-    <%= f.label :rating %>
-    <%= f.text_field :rating, class: "block col-12 field" %>
-  </div>
-
-  <%= f.submit 'Submit', class: "mt2 btn btn-primary mb1 bg-teal" %>
-<% end %>
+</div>

@@ -15,3 +15,11 @@
 //= require_tree .
 
 //= require typeahead
+
+function popout() {
+  $('.pop').on('click', function(event) {
+    event.preventDefault()
+		$('.imagepreview').attr('src', $(this).find('img').attr('src'));
+		$('#imagemodal').modal('show');
+	});
+};
