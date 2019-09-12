@@ -1,24 +1,23 @@
-<section class='col-sm-5'>
-  <h1>Review for <%= @item.name %></h1>
-
-  <%= form_for [:default, @item, Review.new] do |f| %>
-    <section>
-      <%= f.label :title %>
-      <%= f.text_field :title, size: '40%', style: "margin: 5px 1px" %>
-    </section>
-
-    <section>
-      <%= f.label :body %>
-      <%= f.text_area :body, size: '39%', style: "margin: 0px 0px" %>
-    </section>
-
-    <section>
-      <%= f.label :rating %>
-      <%= f.collection_select :rating, (1..5), :to_s, :to_s, include_blank: true %>
-    </section>
-
-    <section class='center' style="margin: 5px 0px">
-      <%= f.submit 'Submit', class: "btn" %>
-    </section>
-  <% end %>
-</section>
+<div class="row justify-content-center" style="margin-top:30px;">
+  <div class="card text-center" style="width: 30rem;">
+    <div class="card-header">
+      <h3>Review for <%= @item.name %></h3>
+    </div>
+    <div class="card-body">
+      <p class="card-text">
+        <%= form_for [:default, @item, Review.new] do |f| %>
+          <%= f.label :title, class: "text-center" %>
+          <%= f.text_field :title, class: 'form-control' %>
+          <br>
+          <%= f.label :body, class: "text-center" %>
+          <%= f.text_area :body, class: 'form-control' %>
+          <br>
+          <%= f.label :rating, class: "text-center" %>
+          <select class="form-control form-control-lg"<%= f.collection_select :rating, (1..5), :to_s, :to_s, include_blank: true %>
+          <br>
+          <%= f.submit 'Submit', class: "btn" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
