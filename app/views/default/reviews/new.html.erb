@@ -1,15 +1,15 @@
-<div class='col-sm-5'>
+<section class='col-sm-5'>
   <h1>Review for <%= @item.name %></h1>
 
   <%= form_for [:default, @item, Review.new] do |f| %>
     <section>
-      <%= f.label :title, style: "margin: 5px 3px" %>
-      <%= f.text_field :title, size: '41%', style: "margin: 10px 10px" %>
+      <%= f.label :title %>
+      <%= f.text_field :title, size: '40%', style: "margin: 5px 1px" %>
     </section>
 
     <section>
-      <%= f.label :body, style: 'float: top' %>
-      <%= f.text_area :body, size: '40%', style: "margin: 0px 10px" %>
+      <%= f.label :body %>
+      <%= f.text_area :body, size: '39%', style: "margin: 0px 0px" %>
     </section>
 
     <section>
@@ -17,8 +17,8 @@
       <%= f.collection_select :rating, (1..5), :to_s, :to_s, include_blank: true %>
     </section>
 
-    <section class='center'>
+    <section class='center' style="margin: 5px 0px">
       <%= f.submit 'Submit', class: "btn" %>
     </section>
   <% end %>
-</div>
+</section>

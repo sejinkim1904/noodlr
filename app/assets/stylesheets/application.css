@@ -15,6 +15,12 @@
  */
 
  .center {
-   margin: auto;
-   width: 82%;
+   width: 70%;
  }
+
+ label{
+  width: 5em;
+  float: left;
+  text-align: left;
+  margin-right: 0.5em;
+}
