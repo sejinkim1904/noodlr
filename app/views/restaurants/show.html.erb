@@ -1,7 +1,9 @@
 <%= javascript_include_tag "restaurants" %>
 <script>
+  var address = '<%= @restaurant.address %>';
+
   document.addEventListener("DOMContentLoaded", function(){
-      initMap(<%=@restaurant.latitude%>, <%=@restaurant.longitude%>)
+      initMap('<%= @restaurant.name %>', <%=@restaurant.latitude%>, <%=@restaurant.longitude%>, '<%= @restaurant.address_1 %>', '<%= @restaurant.city %>', '<%= @restaurant.state %>', '<%= @restaurant.zip_code %>')
   });
 </script>
 <p id="notice"><%= notice %></p>
