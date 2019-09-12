@@ -6,9 +6,9 @@ class FacebooksController < ApplicationController
       flash[:notice] = "Signed in with Facebook!"
       redirect_to root_path
     else
-      new_user = User.create(role: :default, auth_type: :facebook, registered: true)
-      new_facebook_user = Facebook.create(uid: request.env["omniauth.auth"][:uid],name: request.env["omniauth.auth"][:info][:name], user: new_user)
-      session[:user_id] = new_facebook_user.user_id
+      new_user = User.create(auth_type: :facebook, registered: 'true')
+      new_user.facebooks.create(uid: request.env["omniauth.auth"][:uid],name: request.env["omniauth.auth"][:info][:name])
+      session[:user_id] = new_user.id
       flash[:notice] = "Signed in with Facebook!"
       redirect_to root_path
     end
