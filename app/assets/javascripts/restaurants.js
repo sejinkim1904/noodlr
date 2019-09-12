@@ -26,7 +26,3 @@ function initMap(title, lat, lng, address, city, state, zip) {
       infowindow.open(map, marker);
     });
 }
-function getDirections () {
-  var url = 'https://www.google.com/maps/dir/?api=1?'
-
-}
