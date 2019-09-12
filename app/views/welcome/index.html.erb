@@ -1,5 +1,8 @@
 <%= javascript_include_tag "welcome" %>
 <script>
+  document.addEventListener("DOMContentLoaded", function(){
+    initMap()
+  });
   var markers = [];
   var lat = <%= @coordinates[0] %>;
   var lng = <%= @coordinates[1] %>;
@@ -7,9 +10,6 @@
     var restaurant = ['<%= restaurant.name %>', <%= restaurant.latitude %>, <%= restaurant.longitude %>, '<%= restaurant.address_1 %>, <%= restaurant.city %>, <%= restaurant.state %> <%= restaurant.zip_code %>']
     markers.push(restaurant)
   <% end %>
-  document.addEventListener("DOMContentLoaded", function(){
-      initMap()
-  });
 </script>
 
 <div class="row justify-content-center" style="margin-top:30px;">
