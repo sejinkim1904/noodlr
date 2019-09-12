@@ -21,7 +21,7 @@
           <%= link_to image_tag(item.image, style: "height:230px;"), item.image  %>
         </div>
         <div class="card-body" style="text-align:center;">
-          <h5 class="card-title"><%= item.name %></h5>
+          <h5 class="card-title"><%= link_to item.name, item_path(item) %></h5>
           <p class="card-text">Price: <%= number_to_currency(item.price) %></p>
           <p class="card-text">Average Rating: <%= item.average_rating %></p>
         </div>
@@ -38,12 +38,3 @@
 <div id="map">
 
 </div>
-
-<section id="nearby">
-  <h2>Nearby Restaurants</h2>
-  <ul>
-  <% @restaurants.each do |restaurant| %>
-    <li><%= restaurant.name %></li>
-  <% end %>
-</ul>
-</section>
