@@ -30,7 +30,7 @@ describe 'Restaurant show page' do
 
       fill_in 'review[title]', with: 'So tasteful!'
       fill_in 'review[body]', with: 'This is the tastiest Tonkotsu in town'
-      fill_in 'review[rating]', with: 5
+      select "5", :from => "review[rating]"
 
       click_on "Submit"
 
@@ -59,7 +59,7 @@ describe 'Restaurant show page' do
       expect(page).to have_content("Review for Tonkotsu")
 
       fill_in 'review[title]', with: 'So tasteful!'
-      fill_in 'review[rating]', with: 5
+      select "5", :from => "review[rating]"
 
       click_on "Submit"
 
@@ -96,7 +96,7 @@ describe 'Restaurant show page' do
 
       fill_in 'item[review][title]', with: 'So tasteful!'
       fill_in 'item[review][body]', with: 'This is the tastiest Shoyu in town'
-      fill_in 'item[review][rating]', with: 5
+      select "5", :from => "item[review][rating]"
 
       click_on "Submit"
 
@@ -133,7 +133,7 @@ describe 'Restaurant show page' do
 
       fill_in 'item[review][title]', with: 'So tasteful!'
       fill_in 'item[review][body]', with: 'This is the tastiest Shoyu in town'
-      fill_in 'item[review][rating]', with: 5
+      select "5", :from => "item[review][rating]"
 
       click_on "Submit"
 
