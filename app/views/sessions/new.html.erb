@@ -21,9 +21,9 @@
       </div>
       <div class="card-footer text-muted" s>
         <p>Sign in With:</p>
-        <%= button_to 'Facebook', facebook_login_path, class: "btn", method: :get %>
-        <%= button_to 'Gmail', gmail_login_path, class: "btn", method: :get %>
-        <%= button_to 'Instagram', instagram_login_path, class: "btn",  method: :get %>
+        <%= button_to 'Facebook', '/auth/facebook', class: "btn" %>
+        <%= button_to 'Gmail', '/auth/google_oauth2', class: "btn" %>
+        <%= button_to 'Instagram', '/auth/instagram', class: "btn" %>
       </div>
     </div>
   </div>
