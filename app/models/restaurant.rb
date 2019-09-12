@@ -1,7 +1,7 @@
 class Restaurant < ApplicationRecord
   reverse_geocoded_by :latitude, :longitude
   after_validation :reverse_geocode
-  
+
   validates_presence_of :name,
                         :rating,
                         :latitude,
@@ -18,5 +18,9 @@ class Restaurant < ApplicationRecord
 
   def num_pending
     items.where(items: {status: 'pending'}).count
+  end
+
+  def encoded_address
+    URI.encode(address)
   end
 end
