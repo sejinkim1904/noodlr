@@ -8,6 +8,7 @@ class EmailsController < ApplicationController
     email = user.emails.new(email_params)
     if email.save
       session[:user_id] = user.id
+      session[:username] = email.email
 			flash[:notice] = "Logged in as #{email.email}"
 			redirect_to send_registration_path
     else
