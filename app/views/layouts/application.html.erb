@@ -79,8 +79,18 @@
       </div>
     </nav>
 
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, class: name %>
+    <% if flash[:notice] %>
+    <div class="alert alert-success">
+       <%= flash[:notice] %>
+    </div>
+    <% elsif flash[:error] %>
+    <div class="alert alert-danger">
+       <%= flash[:error] %>
+    </div>
+    <% elsif flash[:alert] %>
+    <div class="alert alert-danger">
+       <%= flash[:alert] %>
+    </div>
     <% end %>
 
     <%= yield %>
