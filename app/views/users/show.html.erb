@@ -9,24 +9,45 @@
   <div class="row justify-content-center" style="margin-top:30px;margin-left:30px;">
     <br>
     <div class="card-deck">
-      <% @item.reviews.each do |review| %>
-        <section id="review-<%= review.id %>">
+      <section id="review-<%= review.id %>">
+          <div class="card">
+
+            <div class="card-body" style="text-align:center;">
+              <h5 class="card-title"><%= review.title %></h5>
+              <p><% review.rating.round.times do %>
+                <%= image_tag("ramen-bowl.png", style: 'height:25px ;width:auto;') %>
+              <% end %>
+              <%= "(#{review.rating.round})" %></p>
+
+              <p class="card-text"><%= review.body %></p>
+            </div>
+
+          </div>
+          <br>
+      </section>
+    </div>
+  </div>
+<% end %>
+
+<% if @current_user.restaurant_id %>
+  <h1>"Pending Items"</h1>
+  <% facade.pending_items.each do |item| %>
+    <div class="row justify-content-center" style="margin-top:30px;margin-left:30px;">
+      <br>
+      <div class="card-deck">
+        <section id="item-<%= item.name %>">
             <div class="card">
 
               <div class="card-body" style="text-align:center;">
-                <h5 class="card-title"><%= review.title %></h5>
-                <p><% review.rating.round.times do %>
-                  <%= image_tag("ramen-bowl.png", style: 'height:25px ;width:auto;') %>
-                <% end %>
-                <%= "(#{review.rating.round})" %></p>
-
-                <p class="card-text"><%= review.body %></p>
+                <h5 class="card-title"><%= item.name %></h5>
+                <p class="card-text"><%= item.category.capitalize %></p>
+                <p class="card-text">Price: <%= number_to_currency(item.price) %></p>
+                <p class="card-text"><%= link_to "Approve Item", approve_item_path(item), method: :patch %></p>
               </div>
-
             </div>
             <br>
         </section>
-      <% end %>
+      </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
