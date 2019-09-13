@@ -1,11 +1,11 @@
 <%= javascript_include_tag "welcome" %>
 <script>
-  var markers = [];
+  var restaurants = [];
   var lat = <%= @coordinates[0] %>;
   var lng = <%= @coordinates[1] %>;
   <% @restaurants.each do |restaurant| %>
     var restaurant = ['<%= restaurant.name %>', <%= restaurant.latitude %>, <%= restaurant.longitude %>, '<%= restaurant.address_1 %>, <%= restaurant.city %>, <%= restaurant.state %> <%= restaurant.zip_code %>']
-    markers.push(restaurant)
+    restaurants.push(restaurant)
   <% end %>
   document.addEventListener("DOMContentLoaded", function(){
       initMap()
@@ -35,15 +35,22 @@
   </div>
 </div>
 
-<div id="map">
-
+<div class="index_main">
+  <div class="fixed_column">
+    <div class="nearby">
+      <ul>
+        <% @restaurants.each_with_index do |restaurant, i| %>
+          <div class="card border-primary mb-3" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title" onclick="showMarker(<%= i %>)"><%= restaurant.name %></h5>
+              <p class="card-text" onclick="showMarker(<%= i %>)" style="color: blue"><%= restaurant.address_1 %>, <%= restaurant.city %>, <%= restaurant.state %> <%= restaurant.zip_code %></p>
+            </div>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="fluid-column">
+    <div id="map" style="width:70%; height:100%;display:inline-block; box-shadow: 0px 0px 2px 0px grey;"></div>
+  </div>
 </div>
-
-<section id="nearby">
-  <h2>Nearby Restaurants</h2>
-  <ul>
-  <% @restaurants.each do |restaurant| %>
-    <li><%= restaurant.name %></li>
-  <% end %>
-</ul>
-</section>
