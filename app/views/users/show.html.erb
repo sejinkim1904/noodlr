@@ -5,10 +5,9 @@
 
 <%= render facade.active? %>
 
-<% facade.reviews.each do |review| %>
-  <div class="row justify-content-center" style="margin-top:30px;margin-left:30px;">
-    <br>
-    <div class="card-deck">
+<div class="row justify-content-center" style="margin-top:30px;margin-left:30px;">
+  <div class="card-deck">
+    <% facade.reviews.each do |review| %>
       <section id="review-<%= review.id %>">
           <div class="card">
 
@@ -25,9 +24,9 @@
           </div>
           <br>
       </section>
-    </div>
+    <% end %>
   </div>
-<% end %>
+</div>
 
 <% if @current_user.restaurant_id %>
   <h1>Pending Items for <%= Restaurant.find(@current_user.restaurant_id).name %></h1>
@@ -44,6 +43,7 @@
                 <p class="card-text">Price: <%= number_to_currency(item.price) %></p>
                 <p class="card-text"><%= link_to "Approve Item", approve_item_path(item), method: :patch %></p>
               </div>
+
             </div>
             <br>
         </section>
