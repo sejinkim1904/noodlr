@@ -7,4 +7,8 @@ class DashboardFacade
   def active?
     @current_user.registered == "true" ? "active" : "inactive"
   end
+
+	def reviews
+		@current_user.reviews
+	end
 end
