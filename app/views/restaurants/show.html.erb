@@ -22,7 +22,7 @@
         <p class="card-text"><%= @restaurant.address_1 %> <%= @restaurant.address_2  %></p>
         <p class="card-text"><%= @restaurant.city %>, <%= @restaurant.state %> <%= @restaurant.zip_code %></p>
         <p class="card-text">Phone: <%= @restaurant.phone %></p>
-        <%= button_to "Get Directions", "https://www.google.com/maps/dir/?api=1&destination=#{@restaurant.address}", method: :get, class: "btn" %>
+        <%= link_to '<button type="button", class="btn">Get Directions</button>'.html_safe, "https://www.google.com/maps/dir/?api=1&destination=#{@restaurant.encoded_address}" %>
         <% if current_user&.default? && current_user.registered == 'true' %>
           <%= button_to "Review a New Item", new_default_restaurant_item_path(@restaurant), method: :get, class: "btn" %>
         <% end %>
