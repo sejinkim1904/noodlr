@@ -28,7 +28,7 @@
   </div>
 
   <div class="fluid-column">
-    <div id="map" style="display:inline-block; box-shadow: 0px 0px 2px 0px grey;"></div>
+    <div id="map" style="display:inline-block; box-shadow: 0px 0px 2px 0px grey;margin-top:30px;"></div>
   </div>
 </div>
 
@@ -43,13 +43,13 @@
   </div>
 </div>
 
-<section class='items' style="display: inline-block">
+<section class='items justify-content-center' style="display: inline-block">
   <div class="row justify-content-center">
     <% if current_user&.default? && current_user.registered == 'true' %>
       <%= button_to "Review a New Item", new_default_restaurant_item_path(@restaurant), method: :get, class: "btn btn-review" %>
     <% end %>
   </div>
-  <div class="row justify-content-center" style="margin-top:30px 30px 10px 10px;">
+  <div class="row justify-content-center" style="margin:30px auto auto auto">
     <div class="card-deck">
       <% @restaurant.items.each do |item| %>
         <% if item.status == 'verified' %>
