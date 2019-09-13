@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_12_200003) do
+ActiveRecord::Schema.define(version: 2019_09_11_233324) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,16 +42,6 @@ ActiveRecord::Schema.define(version: 2019_09_12_200003) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_googles_on_user_id"
-  end
-
-  create_table "instagrams", force: :cascade do |t|
-    t.bigint "user_id"
-    t.string "provider"
-    t.string "uid"
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_instagrams_on_user_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -108,7 +98,6 @@ ActiveRecord::Schema.define(version: 2019_09_12_200003) do
   add_foreign_key "emails", "users"
   add_foreign_key "facebooks", "users"
   add_foreign_key "googles", "users"
-  add_foreign_key "instagrams", "users"
   add_foreign_key "items", "restaurants"
   add_foreign_key "reviews", "items"
   add_foreign_key "reviews", "users"
