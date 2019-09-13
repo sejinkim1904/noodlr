@@ -9,7 +9,6 @@ class Default::ItemsController < Default::BaseController
     review = Review.new(review_params.merge(user: current_user).merge(item: item))
     if review.save
       session[:item_id] = review.id
-			flash[:notice] = 'Item has been suggested to restaurant owner for approval.'
       redirect_to send_item_verification_path(params[:restaurant_id])
     else
       item.destroy
