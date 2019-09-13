@@ -3,7 +3,6 @@ class User < ApplicationRecord
   has_many :emails
   has_many :facebooks
   has_many :googles
-  has_many :instagrams
 
   validates :restaurant_id, presence: true, if: :restaurant?
   validates_presence_of :role, :auth_type, :registered

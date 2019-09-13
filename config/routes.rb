@@ -14,8 +14,6 @@ Rails.application.routes.draw do
 
   get '/auth/facebook/callback', to: 'facebooks#create'
   get '/auth/google_oauth2/callback', to: 'googles#create'
-  get '/auth/instagram/callback', to: 'instagrams#create'
-
 
   resources :users, only: [:create]
   resources :restaurants
