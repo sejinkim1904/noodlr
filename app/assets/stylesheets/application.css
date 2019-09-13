@@ -32,7 +32,7 @@
 .nearby {
   padding-left: 10px;
   padding-right: 10px;
-  height: 800px;
+  height: 900px;
   float: left;
   overflow-y: scroll;
 }
@@ -40,5 +40,4 @@
 #map {
     float: right;
     display: block;
-    position: absolute;
 }
