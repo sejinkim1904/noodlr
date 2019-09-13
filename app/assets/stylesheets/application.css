@@ -29,7 +29,7 @@
   width: 100%;
 }
 
-.nearby {
+.nearby, .info-card {
   padding-left: 10px;
   padding-right: 10px;
   height: 900px;
@@ -39,5 +39,6 @@
 
 #map {
     float: right;
+    margin: 30px 40px 30px 0px;
     display: block;
 }
