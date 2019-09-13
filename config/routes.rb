@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get '/register', to: 'registration#new', as: :send_registration
   get '/verification/:id', to: 'item_verification#new', as: :send_item_verification
+  patch '/restaurant/items/:id', to: 'restaurant/items#update', as: :approve_item
   get '/dashboard', to: 'users#show', as: :dashboard
 
   get '/signup', to: 'emails#new', as: :new_email
