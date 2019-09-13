@@ -13,7 +13,7 @@
           <%= f.text_area :body, class: 'form-control' %>
           <br>
           <%= f.label :rating, class: "text-center" %>
-          <select class="form-control form-control-lg"<%= f.collection_select :rating, (1..5), :to_s, :to_s, include_blank: true %>
+          <select class="form-control"<%= f.collection_select :rating, (1..5), :to_s, :to_s, include_blank: true %>
           <br>
           <%= f.submit 'Submit', class: "btn" %>
         <% end %>
