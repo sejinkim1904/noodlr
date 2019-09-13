@@ -129,6 +129,14 @@ OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new(
   'provider' => 'google_oauth2',
   'uid' => '1233more',
   'info' => {
-    'name' => 'manilda7'  
+    'name' => 'manilda7'
+  }
+)
+
+OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new(
+  'provider' => 'google_oauth2',
+  'uid' => '1233more',
+  'info' => {
+    'name' => 'manilda7'
   }
 )
