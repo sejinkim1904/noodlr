@@ -104,6 +104,12 @@ describe 'Restaurant show page' do
 
       visit restaurant_path(@restaurant)
 
+      expect(page).to_not have_css('#Shoyu')
+
+      Item.last.update_attributes(status: 'verified')
+
+      visit restaurant_path(@restaurant)
+
       within ('#Shoyu') do
         expect(page).to have_content("Shoyu")
         expect(page).to have_content("Average Rating: 5.0")
