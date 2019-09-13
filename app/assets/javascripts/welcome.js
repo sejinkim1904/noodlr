@@ -27,7 +27,7 @@ function initMap() {
     });
     let address = encodeURIComponent(restaurants[i][3]);
     let contentString =
-      '<h5>' + restaurants[i][0] + '</h5>' +
+      '<h5><a href=' + restaurants[i][4] + '>' + restaurants[i][0] + '</a></h5>' +
       '<p>' + restaurants[i][3] + '</p>' +
       '<a href="https://www.google.com/maps/dir/?api=1&destination=' + address + '" target="_blank" rel="noopener" style="cursor: pointer; color: rgb(66, 127, 237); text-decoration: none;">Directions</a></div>';
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
