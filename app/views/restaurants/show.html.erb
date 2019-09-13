@@ -22,7 +22,7 @@
         <p class="card-text"><%= @restaurant.address_1 %> <%= @restaurant.address_2  %></p>
         <p class="card-text"><%= @restaurant.city %>, <%= @restaurant.state %> <%= @restaurant.zip_code %></p>
         <p class="card-text">Phone: <%= @restaurant.phone %></p>
-        <%= link_to '<button type="button", class="btn">Get Directions</button>'.html_safe, "https://www.google.com/maps/dir/?api=1&destination=#{@restaurant.encoded_address}" %>
+        <%= button_to "Get Directions", "https://www.google.com/maps/dir/?api=1&destination=#{@restaurant.address}", method: :get, class: "btn" %>
         <% if current_user&.default? && current_user.registered == 'true' %>
           <%= button_to "Review a New Item", new_default_restaurant_item_path(@restaurant), method: :get, class: "btn" %>
         <% end %>
@@ -31,7 +31,7 @@
   </div>
 
   <div class="fluid-column">
-    <div id="map" style="display:inline-block; box-shadow: 0px 0px 2px 0px grey;margin-top:30px;"></div>
+    <div id="map" style="display:inline-block; box-shadow: 0px 0px 2px 0px grey; margin: 30px 20px 0px 0px;"></div>
   </div>
 </div>
 
@@ -47,7 +47,7 @@
 </div>
 
 <section class='items' style="display: inline-block">
-  <div class="row justify-content-center" style="margin-top:30px 30px 10px 10px;">
+  <div class="row justify-content-center" style="margin-top: 40px;">
     <div class="card-deck">
       <% @restaurant.items.each do |item| %>
         <% if item.status == 'verified' %>
