@@ -11,7 +11,7 @@ class Default::ItemsController < Default::BaseController
     if review.save
       if restaurant.users.empty?
         item.update_attributes(status: 'verified')
-        redirect_to restaurants_path(params[:restaurant_id])
+        redirect_to restaurant_path(params[:restaurant_id])
       else
         redirect_to send_item_verification_path(params[:restaurant_id])
       end
