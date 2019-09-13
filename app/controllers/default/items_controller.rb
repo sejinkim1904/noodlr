@@ -5,11 +5,16 @@ class Default::ItemsController < Default::BaseController
   end
 
   def create
+    restaurant = Restaurant.find(params[:restaurant_id])
     item = Item.create(item_params.merge(status: 'pending').merge(restaurant_id: params[:restaurant_id]))
     review = Review.new(review_params.merge(user: current_user).merge(item: item))
     if review.save
-      session[:item_id] = review.id
-      redirect_to send_item_verification_path(params[:restaurant_id])
+      if restaurant.users.empty?
+        item.update_attributes(status: 'verified')
+        redirect_to restaurants_path(params[:restaurant_id])
+      else
+        redirect_to send_item_verification_path(params[:restaurant_id])
+      end
     else
       item.destroy
       flash[:error] = 'Item could not be saved.'
