@@ -26,9 +26,9 @@
                 <p class="card-text">Average Rating: <%= result.average_rating %></p>
               </div>
 
-              <div class="card-footer" style="text-align:center;">
-                <p class="card-text"><small class="text-muted">Available at: <%= link_to result.restaurant.name, restaurant_path(result.restaurant) %></small></p>
-              </div>
+            <div class="card-footer" style="text-align:center;">
+              <p class="card-text"><small class="text-muted">Available at: <%= link_to result.restaurant.name, restaurant_path(result.restaurant) %> <%= (result.restaurant.distance_to(@coordinates)).round(2) %> mi</small></p>
+            </div>
 
             </div>
             <br>
