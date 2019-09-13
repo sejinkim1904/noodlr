@@ -24,3 +24,21 @@
   text-align: left;
   margin-right: 0.5em;
 }
+
+.index_main {
+  width: 100%;
+}
+
+.nearby {
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 800px;
+  float: left;
+  overflow-y: scroll;
+}
+
+#map {
+    float: right;
+    display: block;
+    position: absolute;
+}
