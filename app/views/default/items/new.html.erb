@@ -1,47 +1,41 @@
-<section class='col-sm-5'>
-  <h1>Review a New Item</h1>
-
-  <%= form_for [:default, @restaurant, @item] do |f| %>
-
-    <section>
-      <%= f.label :name %>
-      <%= f.text_field :name, size: '40%', style: "margin: 5px 1px" %>
-    </section>
-
-    <section>
-      <%= f.label :price %>
-      <%= f.number_field :price, style: "margin: 5px 1px" %>
-    </section>
-
-    <section>
-      <%= f.label :category %>
-      <%= f.text_field :category, size: '40%', style: "margin: 5px 1px" %>
-    </section>
-
-    <section>
-      <%= f.label :image %>
-      <%= f.text_field :image, size: '40%', style: "margin: 5px 1px" %>
-    </section>
-
-    <%= f.fields_for :review do |g| %>
-      <section>
-        <%= g.label :title %>
-        <%= g.text_field :title, size: '40%', style: "margin: 5px 1px" %>
-      </section>
-
-      <section>
-        <%= g.label :body, style: 'float: top' %>
-        <%= g.text_area :body, size: '39%', style: "margin: 0px 0px" %>
-      </section>
-
-      <section>
-        <%= g.label :rating %>
-        <%= g.collection_select :rating, (1..5), :to_s, :to_s, include_blank: true %>
-      </section>
-    <% end %>
-
-    <section class='center' style="margin: 5px 0px">
-      <%= f.submit 'Submit', class: "btn" %>
-    </section>
-  <% end %>
-</section>
+<div class="row justify-content-center" style="margin-top:30px;">
+  <div class="card text-center" style="width: 30rem;">
+    <div class="card-header">
+      <h3>Review a New Item</h3>
+    </div>
+    <div class="card-body">
+      <p class="card-text">
+        <%= form_for [:default, @restaurant, @item] do |f| %>
+            <%= f.label :name, class: "text-center" %>
+            <%= f.text_field :name, class: 'form-control'%>
+            <br>
+            <%= f.label :price, class: "text-center" %>
+            <%= f.number_field :price, class: 'form-control' %>
+            <br>
+            <%= f.label :category, class: "text-center" %>
+            <select class="form-control form-control-lg"<%= f.select :category, options_for_select([
+              ["Ramen", "ramen"],
+              ["Stir-Fried", "stir_fried"],
+              ["Pho", "pho"],
+              ["Chinese", "chinese"]
+              ]), class: 'form-control', include_blank: true %>
+            <br>
+            <%= f.label :image, class: "text-center" %>
+            <%= f.text_field :image, class: 'form-control'%>
+            <br>
+        <%= f.fields_for :review do |g| %>
+            <%= g.label :title, class: "text-center" %>
+            <%= g.text_field :title, class: 'form-control' %>
+            <br>
+            <%= g.label :body, class: "text-center" %>
+            <%= g.text_area :body, class: 'form-control' %>
+            <br>
+            <%= g.label :rating, class: "text-center" %>
+            <select class="form-control form-control-lg"<%= g.collection_select :rating, (1..5), :to_s, :to_s, include_blank: true %>
+        <% end %>
+            <br>
+            <%= f.submit 'Submit', class: "btn" %>
+        <% end %>
+    </div>
+  </div>
+</div>

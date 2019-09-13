@@ -10,6 +10,7 @@ class ItemVerificationController < ApplicationController
         faraday.params["num_items"] = restaurant.num_pending
         faraday.adapter Faraday.default_adapter
       end
+      flash[:notice] = 'Item has been suggested to restaurant owner for approval.'
       conn.get("/verify")
     end
 		redirect_to restaurant_path(params[:id])

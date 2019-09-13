@@ -90,7 +90,7 @@ describe 'Restaurant show page' do
 
       fill_in 'item[name]', with: 'Shoyu'
       fill_in 'item[price]', with: 14.00
-      fill_in 'item[category]', with: 'ramen'
+      page.select('Ramen', from: 'Category')
       fill_in 'item[image]', with: "https://s3-media2.fl.yelpcdn.com/bphoto/eMmvwCMQtOUs7GxccJu4zA/o.jpg"
 
       fill_in 'item[review][title]', with: 'So tasteful!'
@@ -127,7 +127,7 @@ describe 'Restaurant show page' do
 
       fill_in 'item[name]', with: 'Shoyu'
       fill_in 'item[price]', with: -1400
-      fill_in 'item[category]', with: 'ramen'
+      page.select('Ramen', from: 'Category')
       fill_in 'item[image]', with: "https://s3-media2.fl.yelpcdn.com/bphoto/eMmvwCMQtOUs7GxccJu4zA/o.jpg"
 
       fill_in 'item[review][title]', with: 'So tasteful!'

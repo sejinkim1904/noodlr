@@ -10,28 +10,30 @@
   <br>
   <div class="card-deck">
     <% facade.results.each do |result| %>
-      <section id="item-<%= result.id %>">
-          <div class="card">
+      <% if result.status == 'verified' %>
+        <section id="item-<%= result.id %>">
+            <div class="card">
 
-            <div class="card-img-top" style="float:inherit;">
-              <a href="#" class="pop">
-                <%= image_tag(result.image, style: "height:240px;") %>
-              </a>
-            </div>
+              <div class="card-img-top" style="float:inherit;">
+                <a href="#" class="pop">
+                  <%= image_tag(result.image, style: "height:240px;") %>
+                </a>
+              </div>
 
-            <div class="card-body" style="text-align:center;">
-              <h5 class="card-title"><%= link_to result.name, item_path(result) %></h5>
-              <p class="card-text">Price: <%= number_to_currency(result.price) %></p>
-              <p class="card-text">Average Rating: <%= result.average_rating %></p>
-            </div>
+              <div class="card-body" style="text-align:center;">
+                <h5 class="card-title"><%= link_to result.name, item_path(result) %></h5>
+                <p class="card-text">Price: <%= number_to_currency(result.price) %></p>
+                <p class="card-text">Average Rating: <%= result.average_rating %></p>
+              </div>
 
             <div class="card-footer" style="text-align:center;">
               <p class="card-text"><small class="text-muted">Available at: <%= link_to result.restaurant.name, restaurant_path(result.restaurant) %> <%= (result.restaurant.distance_to(@coordinates)).round(2) %> mi</small></p>
             </div>
 
-          </div>
-          <br>
-      </section>
+            </div>
+            <br>
+        </section>
+      <% end %>
     <% end %>
   </div>
 </div>
