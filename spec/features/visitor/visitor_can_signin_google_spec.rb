@@ -11,6 +11,12 @@ describe 'As a vistior' do
       expect(page).to have_content('Signed in with Google!')
       visit dashboard_path
       expect(page).to have_content('manilda7')
+
+      click_link('Log Out')
+      click_link('Sign In')
+      click_button 'Google'
+      expect(current_path).to eq(root_path)
+      expect(page).to have_content('Signed in with Google!')
     end
   end
 end
