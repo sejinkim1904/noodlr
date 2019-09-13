@@ -21,6 +21,6 @@ class Restaurant < ApplicationRecord
   end
 
   def encoded_address
-    URI.encode(address)
+    URI.escape(address)
   end
 end
