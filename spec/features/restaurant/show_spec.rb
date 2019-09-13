@@ -17,7 +17,6 @@ describe 'Restaurant show page' do
       visit restaurant_path(@restaurant)
 
       expect(page).to have_content(@restaurant.name)
-      expect(page).to have_content("Dishes")
 
       expect(page).to have_css('.items')
       expect(page).to have_css('.item', count: 1)
@@ -43,7 +42,6 @@ describe 'Restaurant show page' do
       visit restaurant_path(@restaurant)
 
       expect(page).to have_content(@restaurant.name)
-      expect(page).to have_content("Dishes")
 
       expect(page).to have_css('.items')
       expect(page).to have_css('.item', count: 1)
@@ -67,7 +65,6 @@ describe 'Restaurant show page' do
       visit restaurant_path(@restaurant)
 
       expect(page).to have_content(@restaurant.name)
-      expect(page).to have_content("Dishes")
 
       expect(page).to have_css('.items')
       expect(page).to have_css('.item', count: 1)
@@ -89,7 +86,6 @@ describe 'Restaurant show page' do
       visit restaurant_path(@restaurant)
 
       expect(page).to have_content(@restaurant.name)
-      expect(page).to have_content("Dishes")
 
       expect(page).to have_css('.items')
       expect(page).to have_css('.item', count: 1)
