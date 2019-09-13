@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
     if email && email.authenticate(params[:session][:password])
       user = email.user
       session[:user_id] = user.id
+      session[:username] = email.email
 			flash[:notice] = "Logged in as #{email.email}"
       redirect_to dashboard_path
     else

@@ -47,6 +47,11 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Geocoding for Rails
 gem 'geocoder'
 
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'omniauth-instagram'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -59,7 +64,6 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'simplecov'
   gem 'webmock'
-  gem 'skylight'
   gem 'elasticsearch-extensions'
   gem 'selenium-webdriver'
   gem 'webdrivers'

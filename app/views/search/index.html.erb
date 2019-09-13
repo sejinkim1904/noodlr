@@ -1,3 +1,10 @@
+<%= javascript_include_tag "search" %>
+<script>
+  document.addEventListener("DOMContentLoaded", function(){
+    popout()
+  });
+</script>
+
 <h3 style="text-align:center;margin-top:30px"><%= facade.result_count %></h3>
 <div class="row justify-content-center" style="margin-top:30px;margin-left:30px;">
   <br>
@@ -5,20 +12,37 @@
     <% facade.results.each do |result| %>
       <section id="item-<%= result.id %>">
           <div class="card">
-            <div class="card-img-top" style="float:inherit;>
-              <%= link_to image_tag(result.image, style: "height:240px;"), result.image  %>
+
+            <div class="card-img-top" style="float:inherit;">
+              <a href="#" class="pop">
+                <%= image_tag(result.image, style: "height:240px;") %>
+              </a>
             </div>
+
             <div class="card-body" style="text-align:center;">
-              <h5 class="card-title"><%= result.name %></h5>
+              <h5 class="card-title"><%= link_to result.name, item_path(result) %></h5>
               <p class="card-text">Price: <%= number_to_currency(result.price) %></p>
               <p class="card-text">Average Rating: <%= result.average_rating %></p>
             </div>
+
             <div class="card-footer" style="text-align:center;">
               <p class="card-text"><small class="text-muted">Available at: <%= link_to result.restaurant.name, restaurant_path(result.restaurant) %></small></p>
             </div>
+
           </div>
           <br>
       </section>
     <% end %>
+  </div>
+</div>
+
+<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+      	<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <img src="" class="imagepreview" style="width: 100%;" >
+      </div>
+    </div>
   </div>
 </div>

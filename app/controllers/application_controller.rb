@@ -2,10 +2,14 @@ class ApplicationController < ActionController::Base
   include ActionView::Helpers::NumberHelper
   include ActionView::Helpers::TextHelper
   protect_from_forgery with: :exception
-  helper_method :current_user
+  helper_method :current_user, :display_name
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
+  def display_name
+    @display_name ||= session[:username] if session[:username]
   end
 
   def location

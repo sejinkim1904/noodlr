@@ -7,13 +7,13 @@
       <div class="card-body">
         <p class="card-text">
           <%= form_for @email do |f| %>
-            <%= f.label :email %>
+            <%= f.label :email,class: "text-center" %>
             <%= f.email_field :email, class: 'form-control' %>
             <br>
-            <%= f.label :password %>
+            <%= f.label :password,class: "text-center" %>
             <%= f.password_field :password, class: 'form-control' %>
             <br>
-            <%= f.label :password_confirmation %>
+            <%= f.label :password_confirmation, class: "text-center" %>
             <%= f.password_field :password_confirmation, class: 'form-control' %>
             <br>
             <%= f.submit 'Create Account', class: "btn" %>

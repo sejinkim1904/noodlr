@@ -1,4 +1,5 @@
 require 'rails_helper'
+WebMock.allow_net_connect!
 
 describe 'Welcome Page' do
   describe 'As a visitor', :js do
@@ -8,8 +9,6 @@ describe 'Welcome Page' do
 
       expect(page).to have_css('div#map')
       expect(page).to have_content(restaurant.name)
-      expect(page).to have_content(restaurant.latitude)
-      expect(page).to have_content(restaurant.longitude)
     end
   end
 end

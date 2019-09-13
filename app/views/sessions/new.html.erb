@@ -8,10 +8,10 @@
         <p class="card-text">
           <section class="user-login">
             <%= form_for :session, url: logged_in_path, class: "form-inline" do |f| %>
-                <%= f.label :email%>
+                <%= f.label :email, class: "text-center" %>
                 <%= f.email_field :email, class: 'form-control' %>
                 <br>
-                <%= f.label :password %>
+                <%= f.label :password, class: "text-center" %>
                 <%= f.password_field :password, class: 'form-control'  %>
                 <br>
                 <%= f.submit 'Log In', class: "btn" %>
@@ -21,9 +21,9 @@
       </div>
       <div class="card-footer text-muted" s>
         <p>Sign in With:</p>
-        <%= button_to 'Facebook', facebook_login_path, class: "btn", method: :get %>
-        <%= button_to 'Gmail', gmail_login_path, class: "btn", method: :get %>
-        <%= button_to 'Instagram', instagram_login_path, class: "btn",  method: :get %>
+        <%= button_to 'Facebook', '/auth/facebook', class: "btn" %>
+        <%= button_to 'Google', '/auth/google_oauth2', class: "btn" %>
+        <%= button_to 'Instagram', '/auth/instagram', class: "btn" %>
       </div>
     </div>
   </div>
