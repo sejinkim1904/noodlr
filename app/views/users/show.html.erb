@@ -1,11 +1,13 @@
-<h1>Account Settings</h1>
-
-<h3>Account Details</h3>
-<p><%= display_name %></p>
-
-<%= render facade.active? %>
-
-<div class="row justify-content-center" style="margin-top:30px;margin-left:30px;">
+<div class="card text-center" style="width: 25rem; height: 25rem; margin: 30px;float:left">
+  <div class="card-header">
+    <h3>Account Details</h3>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= display_name %><h5>
+    <p class="card-text"><%= render facade.active? %>
+  </div>
+</div>
+<div  style="margin-top:30px;margin-left:30px;float:left;">
   <div class="card-deck">
     <% facade.reviews.each do |review| %>
       <section id="review-<%= review.id %>">
