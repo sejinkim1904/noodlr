@@ -5,7 +5,7 @@ RSpec.describe RegistrationMailer, type: :mailer do
 
   it "Sends registration link" do
     user = create(:user)
-    email_addr = user.emails.create!(email: 'test@test.com', password: 'test')
+    user.emails.create!(email: 'test@test.com', password: 'test')
 
     email = RegistrationMailer.register(user)
 
